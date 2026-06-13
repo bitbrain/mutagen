@@ -2,9 +2,14 @@ extends Node2D
 
 
 @onready var player: Player = $Player
+@onready var tokens_label: Label = %TokensLabel
+
 
 
 func _ready() -> void:
+	PlayerStats.reset()
+	tokens_label.text = str(PlayerStats.get_tokens())
+	PlayerStats.token_gathered.connect(func(tokens): tokens_label.text = str(tokens))
 	player.mutated.connect(_player_mutated)
 
 
