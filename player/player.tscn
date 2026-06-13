@@ -14,6 +14,7 @@ region = Rect2(0, 0, 8, 8)
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1737062558]
+visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_rkbax")
 

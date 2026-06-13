@@ -20,5 +20,6 @@ centered = false
 [node name="CollectionArea" type="Area2D" parent="." unique_id=573342780]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=2041652278]
+visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_sdjam")

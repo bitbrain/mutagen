@@ -2,9 +2,6 @@
 extends Node2D
 
 
-const Colors = preload("res://colors.gd")
-
-
 @export_enum("red", "green", "blue") var mutation_color = "red":
 	set(mc):
 		mutation_color = mc
@@ -22,9 +19,9 @@ func _ready() -> void:
 
 
 func _collect(player:Player) -> void:
-	player.mutate(mutation_color)
-	queue_free()
+	var combined = MutagenColor.resolve_multiple(mutation_color, player.mutagen_color.key)
+	player.mutate(combined)
 
 
 func _update_color() -> void:
-	sprite_2d.modulate = Colors.resolve(mutation_color)
+	sprite_2d.modulate = MutagenColor.resolve(mutation_color).color

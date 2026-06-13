@@ -12,5 +12,12 @@ tile_map_data = PackedByteArray("AAAHAPz/AAAAAAEAAAAHAP3/AAAAAAEAAAAHAP7/AAAAAAE
 position = Vector2(104, 8)
 
 [node name="Mutagen" parent="." index="2" unique_id=2023622897 instance=ExtResource("2_cuow7")]
-position = Vector2(56, -96)
+position = Vector2(120, -16)
 mutation_color = "green"
+
+[node name="Mutagen2" parent="." index="3" unique_id=83222961 instance=ExtResource("2_cuow7")]
+position = Vector2(120, 24)
+
+[node name="Mutagen3" parent="." index="4" unique_id=1333251963 instance=ExtResource("2_cuow7")]
+position = Vector2(80, -8)
+mutation_color = "blue"

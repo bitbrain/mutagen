@@ -2,14 +2,13 @@ class_name Player extends Node2D
 
 
 const CELL_SIZE = 8
-const Colors = preload("res://colors.gd")
 
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
 
 
 var movable = true
-
+var mutagen_color = MutagenColor.DEFAULT
 
 
 func _ready() -> void:
@@ -32,8 +31,9 @@ func _physics_process(delta: float) -> void:
 		movable = false
 		
 		
-func mutate(mutagen:String) -> void:
-	modulate = Colors.resolve(mutagen)
+func mutate(mutagen_color:MutagenColor) -> void:
+	self.mutagen_color = mutagen_color
+	modulate = mutagen_color.color
 
 
 func _on_input_throttle() -> void:
