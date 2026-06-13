@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpw3bcydya3jq"]
 
 [ext_resource type="Script" uid="uid://daw3112w5e2iw" path="res://scenes/title_scene.gd" id="1_6jsh8"]
+[ext_resource type="Texture2D" uid="uid://128agv4ybc3h" path="res://assets/logo.png" id="2_faptf"]
 
 [node name="TitleScene" type="Node2D" unique_id=946803914]
 script = ExtResource("1_6jsh8")
@@ -16,9 +17,21 @@ grow_vertical = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=386303102]
 layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=295396618]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer2/CenterContainer" unique_id=468707369]
+layout_mode = 2
+texture = ExtResource("2_faptf")
+stretch_mode = 4
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1343929679]
 layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
 
 [node name="Play" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=1181728574]
 unique_name_in_owner = true
