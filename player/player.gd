@@ -1,4 +1,4 @@
-class_name Player extends Node2D
+class_name Player extends CharacterBody2D
 
 
 const CELL_SIZE = 8
@@ -17,18 +17,22 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not movable:
 		return
+	var motion = Vector2()
 	if Input.is_action_pressed("walk_left"):
-		position.x -= CELL_SIZE
+		motion.x -= CELL_SIZE
 		movable = false
 	if Input.is_action_pressed("walk_right"):
-		position.x += CELL_SIZE
+		motion.x += CELL_SIZE
 		movable = false
 	if Input.is_action_pressed("walk_up"):
-		position.y -= CELL_SIZE
+		motion.y -= CELL_SIZE
 		movable = false
 	if Input.is_action_pressed("walk_down"):
-		position.y += CELL_SIZE
+		motion.y += CELL_SIZE
 		movable = false
+	
+	move_and_collide(motion)
+	
 		
 		
 func mutate(mutagen_color:MutagenColor) -> void:

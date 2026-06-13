@@ -7,7 +7,9 @@ resource_name = "wall"
 texture = ExtResource("1_l70by")
 texture_region_size = Vector2i(8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [resource]
 tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ylah7")
