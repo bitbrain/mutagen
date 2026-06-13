@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0trgpacxeqvo"]
+
+[ext_resource type="Script" uid="uid://dql0u1vr86pkn" path="res://mutagen/mutagen.gd" id="1_s4h6c"]
+[ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="2_sdjam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jines"]
+atlas = ExtResource("2_sdjam")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdjam"]
+size = Vector2(8, 8)
+
+[node name="Mutagen" type="Node2D" unique_id=2023622897]
+script = ExtResource("1_s4h6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510659401]
+texture = SubResource("AtlasTexture_jines")
+centered = false
+
+[node name="CollectionArea" type="Area2D" parent="." unique_id=573342780]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=2041652278]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_sdjam")

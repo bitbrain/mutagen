@@ -3,17 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cgklx1832tyen" path="res://player/player.gd" id="1_rkbax"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
+size = Vector2(8, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
 atlas = ExtResource("1_oul6g")
 region = Rect2(0, 0, 8, 8)
 
-[node name="Player" type="Node2D" unique_id=1337450750]
+[node name="Player" type="CharacterBody2D" unique_id=1364585358]
 script = ExtResource("1_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1737062558]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=975269191]
 texture = SubResource("AtlasTexture_rkbax")
 centered = false
 
 [node name="InputThrottleTimer" type="Timer" parent="." unique_id=443958376]
-wait_time = 0.005
+wait_time = 0.1
 autostart = true

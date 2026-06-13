@@ -2,6 +2,7 @@ class_name Player extends Node2D
 
 
 const CELL_SIZE = 8
+const Colors = preload("res://colors.gd")
 
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
@@ -29,6 +30,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("walk_down"):
 		position.y += CELL_SIZE
 		movable = false
+		
+		
+func mutate(mutagen:String) -> void:
+	modulate = Colors.resolve(mutagen)
 
 
 func _on_input_throttle() -> void:
