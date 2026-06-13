@@ -12,5 +12,5 @@ extends Node2D
 func _ready() -> void:
 	var tokens = PlayerStats.get_tokens()
 	PlayerStats.reset(true)
-	token_count.text = "You found " + tokens + "token" + ("" if tokens == 1 else "s")
+	token_count.text = "You found " + str(tokens) + "token" + ("" if tokens == 1 else "s")
 	button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/stages/stage_1.tscn"))

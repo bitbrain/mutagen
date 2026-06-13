@@ -26,3 +26,7 @@ centered = false
 [node name="InputThrottleTimer" type="Timer" parent="." unique_id=443958376]
 wait_time = 0.12
 autostart = true
+
+[node name="InputDelayTimer" type="Timer" parent="." unique_id=643468008]
+wait_time = 0.15
+one_shot = true
