@@ -28,7 +28,8 @@ window/stretch/scale_mode="integer"
 
 [global_group]
 
-door=""
+interactible=""
+portal=""
 
 [gui]
 

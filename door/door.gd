@@ -16,7 +16,7 @@ var mutagen_color:MutagenColor = MutagenColor.DEFAULT
 
 func _ready() -> void:
 	_update_color()
-	_update_color()
+
 
 func change_mutation(mutagen_color:MutagenColor) -> void:
 	var same_mutation = self.mutagen_color.is_same(mutagen_color)

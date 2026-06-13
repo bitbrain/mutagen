@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cl74ihm1ywf1c"]
+
+[ext_resource type="Script" uid="uid://5fchhne381wl" path="res://portal/portal.gd" id="1_508n2"]
+[ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="1_sfjos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_508n2"]
+atlas = ExtResource("1_sfjos")
+region = Rect2(0, 32, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_508n2"]
+size = Vector2(8, 8)
+
+[node name="Portal" type="Node2D" unique_id=1416579862 groups=["door", "portal"]]
+script = ExtResource("1_508n2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=536898382]
+texture = SubResource("AtlasTexture_508n2")
+centered = false
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=970039632]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1796925534]
+visible = false
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_508n2")
