@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://tn3w4m7uvli2"]
+
+[ext_resource type="Script" uid="uid://dtho7iqbgiavj" path="res://scenes/game_complete_scene.gd" id="1_7dipq"]
+
+[node name="GameCompleteScene" type="Node2D" unique_id=1846879572]
+script = ExtResource("1_7dipq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2136296816]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=9766532]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=527483708]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=2038677645]
+layout_mode = 2
+text = "You did it!"
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1779543481]
+unique_name_in_owner = true
+layout_mode = 2
+text = "play again"

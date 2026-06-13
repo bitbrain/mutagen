@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://bc4tlm501vui1"]
 
 [ext_resource type="PackedScene" uid="uid://nqyeapgwcwj5" path="res://scenes/gameplay_scene.tscn" id="1_djy2v"]
+[ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="2_sl44i"]
+[ext_resource type="PackedScene" uid="uid://tn3w4m7uvli2" path="res://scenes/game_complete_scene.tscn" id="3_8ykyq"]
 
 [node name="GameplayScene" unique_id=15941419 instance=ExtResource("1_djy2v")]
+
+[node name="Goal" parent="." index="2" unique_id=667824316 instance=ExtResource("2_sl44i")]
+position = Vector2(-24, 0)
+next = ExtResource("3_8ykyq")
