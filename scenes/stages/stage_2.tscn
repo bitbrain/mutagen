@@ -1,0 +1,41 @@
+[gd_scene format=4 uid="uid://dilv70plghu1o"]
+
+[ext_resource type="PackedScene" uid="uid://nqyeapgwcwj5" path="res://scenes/gameplay_scene.tscn" id="1_sv1x6"]
+[ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="2_x3wqt"]
+[ext_resource type="PackedScene" uid="uid://kr56odiaa8ik" path="res://door/door.tscn" id="3_llf8k"]
+
+[node name="GameplayScene" unique_id=15941419 instance=ExtResource("1_sv1x6")]
+
+[node name="TileMapLayer" parent="." index="0" unique_id=1042025763]
+tile_map_data = PackedByteArray("AAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAD//wIAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAAAAEAAAD+////AAAAAAEAAAD+/wAAAAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPv/AAAAAAEAAAADAPv/AAAAAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAEAAAAFAP7/AAAAAAEAAAAFAP//AAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAEAAAD8/wUAAAAAAAEAAAD9/wUAAAAAAAEAAAD+/wUAAAAAAAEAAAD//wUAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAQAAAAAAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAEAAAD7//7/AAAAAAEAAAD7////AAAAAAEAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAD7/wMAAAAAAAEAAAD8//v/AAAAAAEAAAAAAP//AAAAAAEAAAAAAPn/AAAAAAEAAAABAPn/AAAAAAEAAAACAPn/AAAAAAEAAAADAPn/AAAAAAEAAAAEAPn/AAAAAAEAAAAFAPn/AAAAAAEAAAAGAPn/AAAAAAEAAAAHAPr/AAAAAAEAAAAHAPv/AAAAAAEAAAAHAPz/AAAAAAEAAAAHAP3/AAAAAAEAAAAHAP7/AAAAAAEAAAAHAP//AAAAAAEAAAAHAAAAAAAAAAEAAAAHAAEAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAQAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAYAAAAAAAEAAAD//wcAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAcAAAAAAAEAAAACAAcAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAcAAAAAAAEAAAD6/wcAAAAAAAEAAAD7/wcAAAAAAAEAAAD8/wcAAAAAAAEAAAD9/wcAAAAAAAEAAAD+/wcAAAAAAAEAAAD5/wMAAAAAAAEAAAD5/wQAAAAAAAEAAAD5/wUAAAAAAAEAAAD5/wYAAAAAAAEAAAD5//7/AAAAAAEAAAD5////AAAAAAEAAAD5/wAAAAAAAAEAAAD5/wEAAAAAAAEAAAD5/wIAAAAAAAEAAAD5//v/AAAAAAEAAAD5//z/AAAAAAEAAAD5//3/AAAAAAEAAAD5//r/AAAAAAEAAAD6//n/AAAAAAEAAAD7//n/AAAAAAEAAAD8//n/AAAAAAEAAAD9//n/AAAAAAEAAAD+//n/AAAAAAEAAAD///n/AAAAAAEAAAAEAAYAAAAAAAEAAAA=")
+
+[node name="Mutagen" parent="." index="2" unique_id=2023622897 instance=ExtResource("2_x3wqt")]
+position = Vector2(-16, -16)
+mutation_color = "blue"
+
+[node name="Mutagen2" parent="." index="3" unique_id=1971122630 instance=ExtResource("2_x3wqt")]
+position = Vector2(-16, -48)
+
+[node name="Mutagen4" parent="." index="4" unique_id=1853168037 instance=ExtResource("2_x3wqt")]
+position = Vector2(24, 48)
+mutation_color = "green"
+
+[node name="Mutagen3" parent="." index="5" unique_id=705525976 instance=ExtResource("2_x3wqt")]
+position = Vector2(0, -48)
+mutation_color = "blue"
+
+[node name="Door" parent="." index="6" unique_id=920625083 instance=ExtResource("3_llf8k")]
+position = Vector2(-8, 0)
+mutation_color = "cyan"
+
+[node name="Door3" parent="." index="7" unique_id=1772896789 instance=ExtResource("3_llf8k")]
+position = Vector2(32, -40)
+mutation_color = "blue"
+
+[node name="Door2" parent="." index="8" unique_id=177446099 instance=ExtResource("3_llf8k")]
+position = Vector2(-40, 32)
+mutation_color = "green"
+
+[node name="Door4" parent="." index="9" unique_id=495519620 instance=ExtResource("3_llf8k")]
+position = Vector2(-48, -32)
+mutation_color = "magenta"

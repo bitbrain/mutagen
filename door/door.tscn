@@ -18,5 +18,6 @@ texture = SubResource("AtlasTexture_rdd60")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969750646]
+visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_rdd60")
