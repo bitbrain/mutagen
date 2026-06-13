@@ -30,6 +30,11 @@ window/stretch/scale_mode="integer"
 
 door=""
 
+[gui]
+
+theme/custom="uid://qtr8chan3m1w"
+theme/custom_font="uid://tan3g4nnnlnh"
+
 [input]
 
 walk_left={

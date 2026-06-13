@@ -24,4 +24,5 @@ func _collect(player:Player) -> void:
 
 
 func _update_color() -> void:
-	sprite_2d.modulate = MutagenColor.resolve(mutation_color).color
+	if sprite_2d:
+		sprite_2d.modulate = MutagenColor.resolve(mutation_color).color

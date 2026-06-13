@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dpw3bcydya3jq"]
+
+[ext_resource type="Script" uid="uid://daw3112w5e2iw" path="res://scenes/title_scene.gd" id="1_6jsh8"]
+
+[node name="TitleScene" type="Node2D" unique_id=946803914]
+script = ExtResource("1_6jsh8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1468758971]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=365465445]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=386303102]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1343929679]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=1181728574]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=2060406884]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"

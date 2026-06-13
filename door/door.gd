@@ -26,5 +26,6 @@ func change_mutation(mutagen_color:MutagenColor) -> void:
 
 
 func _update_color() -> void:
-	sprite_2d.modulate = MutagenColor.resolve(mutation_color).color
+	if sprite_2d:
+		sprite_2d.modulate = MutagenColor.resolve(mutation_color).color
 	mutagen_color = MutagenColor.resolve(mutation_color)
