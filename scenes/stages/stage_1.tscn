@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="2_cuow7"]
 [ext_resource type="PackedScene" uid="uid://kr56odiaa8ik" path="res://door/door.tscn" id="3_8q8ih"]
 [ext_resource type="PackedScene" uid="uid://cl74ihm1ywf1c" path="res://portal/portal.tscn" id="4_k45mu"]
+[ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="5_ncvry"]
+[ext_resource type="PackedScene" uid="uid://dilv70plghu1o" path="res://scenes/stages/stage_2.tscn" id="6_l1pay"]
 
 [node name="Stage1" unique_id=15941419 instance=ExtResource("1_3847s")]
 
@@ -24,29 +26,37 @@ position = Vector2(-16, -88)
 position = Vector2(72, 24)
 mutation_color = "blue"
 
-[node name="DoorBlue" parent="." index="5" unique_id=698011258 instance=ExtResource("3_8q8ih")]
+[node name="MutagenBlue2" parent="." index="5" unique_id=1681443871 instance=ExtResource("2_cuow7")]
+position = Vector2(56, -96)
+mutation_color = "blue"
+
+[node name="DoorBlue" parent="." index="6" unique_id=698011258 instance=ExtResource("3_8q8ih")]
 position = Vector2(80, -32)
 mutation_color = "blue"
 
-[node name="DoorCyan" parent="." index="6" unique_id=1474049172 instance=ExtResource("3_8q8ih")]
+[node name="DoorCyan" parent="." index="7" unique_id=1474049172 instance=ExtResource("3_8q8ih")]
 position = Vector2(16, -80)
 mutation_color = "cyan"
 
-[node name="DoorYellow" parent="." index="7" unique_id=920625083 instance=ExtResource("3_8q8ih")]
+[node name="DoorYellow" parent="." index="8" unique_id=920625083 instance=ExtResource("3_8q8ih")]
 position = Vector2(-32, -128)
 mutation_color = "yellow"
 
-[node name="DoorYellow2" parent="." index="8" unique_id=1189637351 instance=ExtResource("3_8q8ih")]
+[node name="DoorYellow2" parent="." index="9" unique_id=1189637351 instance=ExtResource("3_8q8ih")]
 position = Vector2(136, 40)
 mutation_color = "yellow"
 
-[node name="DoorRed" parent="." index="9" unique_id=1661387488 instance=ExtResource("3_8q8ih")]
+[node name="DoorRed" parent="." index="10" unique_id=1661387488 instance=ExtResource("3_8q8ih")]
 position = Vector2(-16, -72)
 
-[node name="Portal" parent="." index="10" unique_id=1416579862 instance=ExtResource("4_k45mu")]
+[node name="Portal" parent="." index="11" unique_id=1416579862 instance=ExtResource("4_k45mu")]
 position = Vector2(0, -120)
 mutation_color = "yellow"
 
-[node name="Portal2" parent="." index="11" unique_id=357029359 instance=ExtResource("4_k45mu")]
+[node name="Portal2" parent="." index="12" unique_id=357029359 instance=ExtResource("4_k45mu")]
 position = Vector2(136, -16)
 mutation_color = "yellow"
+
+[node name="Goal" parent="." index="13" unique_id=667824316 instance=ExtResource("5_ncvry")]
+position = Vector2(136, 48)
+next = ExtResource("6_l1pay")

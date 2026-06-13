@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dys3qxb737sue"]
+
+[ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="1_6aq0c"]
+[ext_resource type="Script" uid="uid://631sgg74uq8h" path="res://goal/goal.gd" id="1_7c8bl"]
+[ext_resource type="Shader" uid="uid://bsernef5fwtwa" path="res://assets/rainbow.gdshader" id="2_h3eg0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_73eyi"]
+shader = ExtResource("2_h3eg0")
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.8790000417525
+shader_parameter/angle = 45.0000021375
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c8bl"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(0, 40, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3eg0"]
+size = Vector2(8, 8)
+
+[node name="Goal" type="Node2D" unique_id=667824316]
+script = ExtResource("1_7c8bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=940812285]
+material = SubResource("ShaderMaterial_73eyi")
+texture = SubResource("AtlasTexture_7c8bl")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=189219202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=716464481]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_h3eg0")
