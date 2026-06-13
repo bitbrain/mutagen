@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kr56odiaa8ik" path="res://door/door.tscn" id="3_llf8k"]
 [ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="4_llf8k"]
 [ext_resource type="PackedScene" uid="uid://bc4tlm501vui1" path="res://scenes/stages/stage_3.tscn" id="5_tiiek"]
+[ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="6_dg2hc"]
 
 [node name="GameplayScene" unique_id=15941419 instance=ExtResource("1_sv1x6")]
 
@@ -42,6 +43,13 @@ mutation_color = "green"
 position = Vector2(-48, -32)
 mutation_color = "magenta"
 
-[node name="Goal" parent="." index="10" unique_id=667824316 instance=ExtResource("4_llf8k")]
+[node name="Door5" parent="." index="10" unique_id=607351301 instance=ExtResource("3_llf8k")]
+position = Vector2(48, -32)
+mutation_color = "magenta"
+
+[node name="Goal" parent="." index="11" unique_id=667824316 instance=ExtResource("4_llf8k")]
 position = Vector2(-8, -8)
 next = ExtResource("5_tiiek")
+
+[node name="Token" parent="." index="12" unique_id=1113412797 instance=ExtResource("6_dg2hc")]
+position = Vector2(40, 48)

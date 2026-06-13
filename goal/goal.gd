@@ -9,7 +9,8 @@ extends Node2D
 
 
 func _ready() -> void:
-	PlayerStats.reset()
+	if not Engine.is_editor_hint():
+		PlayerStats.reset()
 	area_2d.body_entered.connect(_player_entered)
 	
 

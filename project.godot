@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mutagen"
-run/main_scene="uid://vlq7s64d3xxq"
+run/main_scene="uid://dpw3bcydya3jq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.19607843, 0.19215687, 0.23137255, 1)
 config/icon="res://icon.svg"

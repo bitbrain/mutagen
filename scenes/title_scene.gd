@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const Stage1 = preload("res://scenes/stages/stage_1.tscn")
+const Stage1 = preload("res://scenes/stages/stage_tutorial.tscn")
 
 
 @onready var play: Button = %Play
