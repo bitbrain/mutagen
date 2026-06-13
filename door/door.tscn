@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://kr56odiaa8ik"]
+
+[ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="1_plcny"]
+[ext_resource type="Script" uid="uid://dtad4t3wosd80" path="res://door/door.gd" id="1_rdd60"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdd60"]
+atlas = ExtResource("1_plcny")
+region = Rect2(0, 24, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdd60"]
+size = Vector2(8, 8)
+
+[node name="Door" type="StaticBody2D" unique_id=920625083 groups=["door"]]
+script = ExtResource("1_rdd60")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1485702819]
+texture = SubResource("AtlasTexture_rdd60")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969750646]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_rdd60")

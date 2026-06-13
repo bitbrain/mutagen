@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://nqyeapgwcwj5"]
 
 [ext_resource type="TileSet" uid="uid://dvqrmlfy6sv7o" path="res://assets/tileset.tres" id="1_01stm"]
+[ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
+script = ExtResource("1_xpbwm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1042025763]
 tile_set = ExtResource("1_01stm")

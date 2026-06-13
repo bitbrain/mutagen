@@ -1,6 +1,9 @@
 class_name Player extends CharacterBody2D
 
 
+signal mutated(color:MutagenColor)
+
+
 const CELL_SIZE = 8
 
 
@@ -31,6 +34,7 @@ func _physics_process(delta: float) -> void:
 		motion.y += CELL_SIZE
 		movable = false
 	
+	# FIXME: consider Vector2.snapped() for better collisions
 	move_and_collide(motion)
 	
 		
@@ -38,6 +42,7 @@ func _physics_process(delta: float) -> void:
 func mutate(mutagen_color:MutagenColor) -> void:
 	self.mutagen_color = mutagen_color
 	modulate = mutagen_color.color
+	mutated.emit(mutagen_color)
 
 
 func _on_input_throttle() -> void:

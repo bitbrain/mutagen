@@ -20,10 +20,23 @@ const COLOR_MAP = {
 	"green,red": "#fdfe89"
 }
 
+const PLACEHOLDERS = {
+	"yellow": "green,red",
+	"magenta": "blue,red",
+	"cyan": "blue,green"
+}
+
+
+func is_same(other:MutagenColor) -> bool:
+	return key == other.key
+
+
 static var DEFAULT = MutagenColor.new(COLOR_MAP["none"], "none")
 
 
 static func resolve(key:String) -> MutagenColor:
+	if key in PLACEHOLDERS:
+		key = PLACEHOLDERS[key]
 	if key in COLOR_MAP:
 		return MutagenColor.new(COLOR_MAP[key], key)
 	return MutagenColor.new(Color(COLOR_MAP["none"])	, "none")
