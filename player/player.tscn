@@ -10,6 +10,31 @@ radius = 3.8
 atlas = ExtResource("1_oul6g")
 region = Rect2(0, 0, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oul6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1dw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1364585358]
 motion_mode = 1
 script = ExtResource("1_rkbax")
@@ -19,8 +44,10 @@ visible = false
 position = Vector2(4, 4)
 shape = SubResource("CircleShape2D_rkbax")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975269191]
-texture = SubResource("AtlasTexture_rkbax")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=672145907]
+sprite_frames = SubResource("SpriteFrames_oul6g")
+autoplay = "default"
+frame_progress = 0.31802067
 centered = false
 
 [node name="InputThrottleTimer" type="Timer" parent="." unique_id=443958376]

@@ -3,9 +3,48 @@
 [ext_resource type="Script" uid="uid://dql0u1vr86pkn" path="res://mutagen/mutagen.gd" id="1_s4h6c"]
 [ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="2_sdjam"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jines"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdjam"]
 atlas = ExtResource("2_sdjam")
 region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jines"]
+atlas = ExtResource("2_sdjam")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eus8n"]
+atlas = ExtResource("2_sdjam")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t75ni"]
+atlas = ExtResource("2_sdjam")
+region = Rect2(24, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2qdg"]
+atlas = ExtResource("2_sdjam")
+region = Rect2(32, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7762"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdjam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jines")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eus8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t75ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2qdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdjam"]
 size = Vector2(8, 8)
@@ -13,9 +52,10 @@ size = Vector2(8, 8)
 [node name="Mutagen" type="Node2D" unique_id=2023622897]
 script = ExtResource("1_s4h6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510659401]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=949230758]
 modulate = Color(0.9529412, 0.5294118, 0.5294118, 1)
-texture = SubResource("AtlasTexture_jines")
+sprite_frames = SubResource("SpriteFrames_f7762")
+autoplay = "default"
 centered = false
 
 [node name="CollectionArea" type="Area2D" parent="." unique_id=573342780]

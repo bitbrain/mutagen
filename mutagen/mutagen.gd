@@ -8,7 +8,7 @@ extends Node2D
 		_update_color.call_deferred()
 
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var collection_area: Area2D = $CollectionArea
 
 

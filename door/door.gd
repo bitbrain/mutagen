@@ -8,7 +8,7 @@ extends StaticBody2D
 		_update_color.call_deferred()
 
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 
 var mutagen_color:MutagenColor = MutagenColor.DEFAULT
