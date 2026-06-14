@@ -5,6 +5,7 @@ signal mutated(color:MutagenColor)
 
 
 const CELL_SIZE = 8
+const TrailEffect = preload("res://effects/trail_effect.tscn")
 
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
@@ -14,6 +15,7 @@ const CELL_SIZE = 8
 var movable = true
 var pressing = false
 var mutagen_color = MutagenColor.DEFAULT
+var last_position:Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -55,12 +57,19 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("walk_down"):
 			motion.y += CELL_SIZE
 			movable = false
+			
+	last_position = position
 	
 	move_and_collide(motion)
 	
 	# avoid awkward positioning between pixels
 	position = position.snapped(Vector2(1, 1))
-		
+	
+	if last_position.direction_to(position).length() > 0:
+		var trail_effect = TrailEffect.instantiate() as Node2D
+		trail_effect.position = last_position
+		trail_effect.modulate = modulate
+		get_parent().add_child(trail_effect)
 		
 func mutate(mutagen_color:MutagenColor) -> void:
 	self.mutagen_color = mutagen_color

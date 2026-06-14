@@ -47,7 +47,7 @@ shape = SubResource("CircleShape2D_rkbax")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=672145907]
 sprite_frames = SubResource("SpriteFrames_oul6g")
 autoplay = "default"
-frame_progress = 0.31802067
+frame_progress = 0.16148394
 centered = false
 
 [node name="InputThrottleTimer" type="Timer" parent="." unique_id=443958376]
