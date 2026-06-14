@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*uid://cbr4gswodnguh"
+AudioManager="*uid://xvwi6xhm12d6"
 
 [display]
 
@@ -92,4 +93,5 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.19607843, 0.19215687, 0.23137255, 1)

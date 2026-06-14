@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
 [ext_resource type="Shader" uid="uid://dga1eh6177ior" path="res://assets/crt.gdshader" id="4_mvhas"]
+[ext_resource type="Shader" uid="uid://dg3jaf61ru2e4" path="res://assets/glow.gdshader" id="5_27dq3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_27dq3"]
 shader = ExtResource("4_mvhas")
@@ -28,6 +29,12 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1126i"]
+shader = ExtResource("5_27dq3")
+shader_parameter/hpass = 0.40000000596048
+shader_parameter/vpass = 0.5000000074506
+shader_parameter/radius = 5
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
 script = ExtResource("1_xpbwm")
@@ -68,3 +75,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "0"
 horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2131533729]
+material = SubResource("ShaderMaterial_1126i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
