@@ -116,7 +116,7 @@ script = ExtResource("1_7c8bl")
 material = SubResource("ShaderMaterial_73eyi")
 sprite_frames = SubResource("SpriteFrames_swnbh")
 autoplay = "default"
-frame_progress = 0.18935187
+frame_progress = 0.80542684
 centered = false
 
 [node name="Overlay" type="Sprite2D" parent="." unique_id=237932465]
