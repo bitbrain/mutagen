@@ -10,9 +10,69 @@ shader_parameter/strength = 0.5
 shader_parameter/speed = 0.5
 shader_parameter/angle = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_apco0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy0pe"]
 atlas = ExtResource("1_fjt1n")
 region = Rect2(0, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm8bg"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(8, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjkmq"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(16, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_golxd"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(24, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oriu4"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(32, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfa6k"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(40, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86ahb"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(48, 48, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th5fm"]
+atlas = ExtResource("1_fjt1n")
+region = Rect2(56, 48, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs6a5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy0pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm8bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjkmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_golxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oriu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfa6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86ahb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th5fm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apco0"]
 size = Vector2(8, 8)
@@ -20,9 +80,12 @@ size = Vector2(8, 8)
 [node name="Token" type="Node2D" unique_id=1113412797]
 script = ExtResource("1_gy0pe")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674410313]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1001841768]
 material = SubResource("ShaderMaterial_gy0pe")
-texture = SubResource("AtlasTexture_apco0")
+sprite_frames = SubResource("SpriteFrames_bs6a5")
+autoplay = "default"
+frame = 2
+frame_progress = 0.32694831
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1679970685]

@@ -8,7 +8,7 @@ class_name Portal extends Node2D
 		_update_color.call_deferred()
 
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var collision_area: Area2D = $CollisionArea
 
 
