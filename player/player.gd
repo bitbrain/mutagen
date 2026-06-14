@@ -56,8 +56,10 @@ func _physics_process(delta: float) -> void:
 			motion.y += CELL_SIZE
 			movable = false
 	
-	# FIXME: consider Vector2.snapped() for better collisions
 	move_and_collide(motion)
+	
+	# avoid awkward positioning between pixels
+	position = position.snapped(Vector2(1, 1))
 		
 		
 func mutate(mutagen_color:MutagenColor) -> void:
