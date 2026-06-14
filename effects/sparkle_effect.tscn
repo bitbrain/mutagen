@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://blcyxn1nrrwe2"]
+
+[ext_resource type="Texture2D" uid="uid://dm2is2hprrr2l" path="res://assets/spritesheet.png" id="2_4xrfn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yti6e"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xrfn"]
+atlas = ExtResource("2_4xrfn")
+region = Rect2(0, 64, 32, 8)
+
+[node name="SparkleEffect" type="Node2D" unique_id=1849540912]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1092172737]
+material = SubResource("CanvasItemMaterial_yti6e")
+amount = 1
+texture = SubResource("AtlasTexture_4xrfn")
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 0)
+anim_speed_min = 2.0
+anim_speed_max = 2.0
