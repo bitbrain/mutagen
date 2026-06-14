@@ -84,8 +84,7 @@ script = ExtResource("1_gy0pe")
 material = SubResource("ShaderMaterial_gy0pe")
 sprite_frames = SubResource("SpriteFrames_bs6a5")
 autoplay = "default"
-frame = 2
-frame_progress = 0.32694831
+frame_progress = 0.4814563
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1679970685]
