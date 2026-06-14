@@ -1,11 +1,85 @@
-[gd_scene format=3 uid="uid://bc4tlm501vui1"]
+[gd_scene format=4 uid="uid://bc4tlm501vui1"]
 
 [ext_resource type="PackedScene" uid="uid://nqyeapgwcwj5" path="res://scenes/gameplay_scene.tscn" id="1_djy2v"]
 [ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="2_sl44i"]
 [ext_resource type="PackedScene" uid="uid://tn3w4m7uvli2" path="res://scenes/game_complete_scene.tscn" id="3_8ykyq"]
+[ext_resource type="PackedScene" uid="uid://cl74ihm1ywf1c" path="res://portal/portal.tscn" id="4_33m27"]
+[ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="5_7ldjl"]
+[ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="6_7ldjl"]
 
 [node name="GameplayScene" unique_id=15941419 instance=ExtResource("1_djy2v")]
+
+[node name="TileMapLayer" parent="." index="0" unique_id=1042025763]
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAEAAAD9////AAAAAAEAAAD9/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAD7/wEAAAAAAAEAAAD6/wEAAAAAAAEAAAD8////AAAAAAEAAAD7////AAAAAAEAAAD5/wEAAAAAAAEAAAD4/wEAAAAAAAEAAAD3/wAAAAAAAAEAAAD3////AAAAAAEAAAD3//7/AAAAAAEAAAD6//7/AAAAAAEAAAACAAAAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAGAP//AAAAAAEAAAAHAP//AAAAAAEAAAAIAP//AAAAAAEAAAAJAAAAAAAAAAEAAAAIAAEAAAAAAAEAAAD3//3/AAAAAAEAAAD5//3/AAAAAAEAAAD6//3/AAAAAAEAAAD7//3/AAAAAAEAAAD8//3/AAAAAAEAAAD9//3/AAAAAAEAAAD+//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAACAP3/AAAAAAEAAAADAP3/AAAAAAEAAAD1//r/AAAAAAEAAAD1//j/AAAAAAEAAAD3//X/AAAAAAEAAAD4//X/AAAAAAEAAAD5//X/AAAAAAEAAAD6//X/AAAAAAEAAAD7//X/AAAAAAEAAAD8//X/AAAAAAEAAAD9//X/AAAAAAEAAAD+//X/AAAAAAEAAAD///X/AAAAAAEAAAAAAPX/AAAAAAEAAAABAPX/AAAAAAEAAAACAPX/AAAAAAEAAAADAPX/AAAAAAEAAAD3//T/AAAAAAEAAAD3//P/AAAAAAEAAAD3//L/AAAAAAEAAAD6//T/AAAAAAEAAAD4//H/AAAAAAEAAAD5//H/AAAAAAEAAAD6//H/AAAAAAEAAAD7//H/AAAAAAEAAAD8//H/AAAAAAEAAAD9//H/AAAAAAEAAAD+//L/AAAAAAEAAAD9//P/AAAAAAEAAAD8//P/AAAAAAEAAAD7//P/AAAAAAEAAAACAPL/AAAAAAEAAAADAPH/AAAAAAEAAAAEAPH/AAAAAAEAAAAFAPH/AAAAAAEAAAAGAPH/AAAAAAEAAAAHAPH/AAAAAAEAAAAIAPH/AAAAAAEAAAAJAPL/AAAAAAEAAAAIAPP/AAAAAAEAAAAHAPP/AAAAAAEAAAAGAPP/AAAAAAEAAAAFAPT/AAAAAAEAAAD0//j/AAAAAAEAAAD0//r/AAAAAAEAAADz//v/AAAAAAEAAADw//v/AAAAAAEAAADv//r/AAAAAAEAAADv//n/AAAAAAEAAADv//j/AAAAAAEAAADz//f/AAAAAAEAAADw//f/AAAAAAEAAAAEAPb/AAAAAAEAAAAEAPz/AAAAAAEAAAAFAPv/AAAAAAEAAAAFAPr/AAAAAAEAAAAFAPn/AAAAAAEAAAAFAPj/AAAAAAEAAAAFAPf/AAAAAAEAAAAGAPr/AAAAAAEAAAAGAPj/AAAAAAEAAAAHAPj/AAAAAAEAAAAHAPr/AAAAAAEAAAAIAPn/AAAAAAEAAAABAPT/AAAAAAEAAAABAPP/AAAAAAEAAAAEAPT/AAAAAAEAAAABAP7/AAAAAAEAAAABAP//AAAAAAEAAAAEAP7/AAAAAAEAAAAFAP7/AAAAAAEAAADx//f/AAAAAAEAAADy//f/AAAAAAEAAADy//v/AAAAAAEAAADx//v/AAAAAAEAAAD2//f/AAAAAAEAAAD3//b/AAAAAAEAAAD2//v/AAAAAAEAAAD3//z/AAAAAAEAAAD4//3/AAAAAAEAAAD5//f/AAAAAAEAAAD6//f/AAAAAAEAAAD7//f/AAAAAAEAAAD8//j/AAAAAAEAAAD5//v/AAAAAAEAAAD6//v/AAAAAAEAAAD7//v/AAAAAAEAAAD4//r/AAAAAAEAAAD///j/AAAAAAEAAAAAAPf/AAAAAAEAAAABAPf/AAAAAAEAAAACAPf/AAAAAAEAAAADAPr/AAAAAAEAAAACAPv/AAAAAAEAAAABAPv/AAAAAAEAAAAAAPv/AAAAAAEAAAA=")
+
+[node name="Player" parent="." index="1" unique_id=1337450750]
+position = Vector2(-120, -56)
 
 [node name="Goal" parent="." index="2" unique_id=667824316 instance=ExtResource("2_sl44i")]
 position = Vector2(-24, 0)
 next = ExtResource("3_8ykyq")
+
+[node name="Portal" parent="." index="4" unique_id=1416579862 instance=ExtResource("4_33m27")]
+position = Vector2(-48, -8)
+mutation_color = "cyan"
+
+[node name="Portal2" parent="." index="5" unique_id=1850857888 instance=ExtResource("4_33m27")]
+position = Vector2(-48, -104)
+mutation_color = "cyan"
+
+[node name="Portal3" parent="." index="6" unique_id=287897187 instance=ExtResource("4_33m27")]
+position = Vector2(16, -104)
+mutation_color = "blue"
+
+[node name="Portal6" parent="." index="7" unique_id=894232074 instance=ExtResource("4_33m27")]
+position = Vector2(24, -96)
+mutation_color = "magenta"
+
+[node name="Portal7" parent="." index="8" unique_id=976532881 instance=ExtResource("4_33m27")]
+position = Vector2(16, -16)
+mutation_color = "magenta"
+
+[node name="Portal4" parent="." index="9" unique_id=156991606 instance=ExtResource("4_33m27")]
+position = Vector2(-24, -112)
+mutation_color = "blue"
+
+[node name="Portal8" parent="." index="10" unique_id=1871271603 instance=ExtResource("4_33m27")]
+position = Vector2(32, -72)
+
+[node name="Portal5" parent="." index="11" unique_id=72198027 instance=ExtResource("4_33m27")]
+position = Vector2(64, -112)
+
+[node name="Mutagen" parent="." index="12" unique_id=2023622897 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, -104)
+mutation_color = "green"
+
+[node name="Mutagen2" parent="." index="13" unique_id=1124234510 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, -112)
+
+[node name="Mutagen3" parent="." index="14" unique_id=2131556649 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, -96)
+mutation_color = "blue"
+
+[node name="Mutagen4" parent="." index="15" unique_id=247482461 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, -16)
+mutation_color = "green"
+
+[node name="Mutagen9" parent="." index="16" unique_id=1288170665 instance=ExtResource("5_7ldjl")]
+position = Vector2(16, -48)
+
+[node name="Mutagen5" parent="." index="17" unique_id=1720364482 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, -8)
+
+[node name="Mutagen6" parent="." index="18" unique_id=1908885079 instance=ExtResource("5_7ldjl")]
+position = Vector2(-64, 0)
+mutation_color = "blue"
+
+[node name="Mutagen7" parent="." index="19" unique_id=203299812 instance=ExtResource("5_7ldjl")]
+position = Vector2(48, -112)
+
+[node name="Mutagen8" parent="." index="20" unique_id=1522548944 instance=ExtResource("5_7ldjl")]
+position = Vector2(32, -112)
+mutation_color = "blue"
+
+[node name="Token" parent="." index="21" unique_id=1113412797 instance=ExtResource("6_7ldjl")]
+position = Vector2(64, 0)

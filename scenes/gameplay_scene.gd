@@ -11,6 +11,10 @@ func _ready() -> void:
 	tokens_label.text = str(PlayerStats.get_tokens())
 	PlayerStats.token_gathered.connect(func(tokens): tokens_label.text = str(tokens))
 	player.mutated.connect(_player_mutated)
+	
+	# TODO: figure out virtual keyboard support on mobile
+	#if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
+	#	DisplayServer.virtual_keyboard_show("")
 
 
 func _process(delta: float) -> void:
