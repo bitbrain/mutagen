@@ -1,6 +1,10 @@
 extends Node2D
 
 
+const TRANSITION_MS = 0.3
+const TRANSITION_DELAY = 0.3
+
+
 @onready var player: Player = $Player
 @onready var tokens_label: Label = %TokensLabel
 
@@ -11,6 +15,11 @@ func _ready() -> void:
 	tokens_label.text = str(PlayerStats.get_tokens())
 	PlayerStats.token_gathered.connect(func(tokens): tokens_label.text = str(tokens))
 	player.mutated.connect(_player_mutated)
+	
+	var transition_tween = create_tween()
+	transition_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)\
+	.set_delay(TRANSITION_DELAY)
+
 	
 	# TODO: figure out virtual keyboard support on mobile
 	#if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):

@@ -11,7 +11,11 @@ const MENU_SOUND = preload("res://assets/menu.ogg")
 
 func _ready() -> void:
 	AudioManager.play_music(GameplayMusic)
-	play.pressed.connect(func(): get_tree().change_scene_to_packed(Stage1))
+	play.pressed.connect(func(): 
+		var transition_tween = create_tween()
+		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
+		.finished.connect(get_tree().change_scene_to_packed.bind(Stage1))
+	)
 	quit.pressed.connect(func(): get_tree().quit())
 	
 	play.mouse_entered.connect(func(): AudioManager.play_sound(MENU_SOUND))

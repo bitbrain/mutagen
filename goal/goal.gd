@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _player_entered(player:Player) -> void:
 	PlayerStats.commit()
-	get_tree().change_scene_to_packed(next)
-	
+	var transition_tween = create_tween()
+	transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
+	.finished.connect(get_tree().change_scene_to_packed.bind(next))
 	
