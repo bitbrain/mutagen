@@ -2,6 +2,9 @@
 extends Node2D
 
 
+const COLLECT_SOUND = preload("res://assets/collect.ogg")
+
+
 @onready var area_2d: Area2D = $Area2D
 
 
@@ -12,4 +15,5 @@ func _ready() -> void:
 
 func _player_entered(player:Player) -> void:
 	PlayerStats.increment_new_tokens()
+	AudioManager.play_sound(COLLECT_SOUND)
 	queue_free()
