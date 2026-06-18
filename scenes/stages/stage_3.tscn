@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nqyeapgwcwj5" path="res://scenes/gameplay_scene.tscn" id="1_djy2v"]
 [ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="2_sl44i"]
-[ext_resource type="PackedScene" uid="uid://tn3w4m7uvli2" path="res://scenes/game_complete_scene.tscn" id="3_8ykyq"]
+[ext_resource type="PackedScene" uid="uid://b88do3e7hdkbo" path="res://scenes/stages/stage_4.tscn" id="3_7ldjl"]
 [ext_resource type="PackedScene" uid="uid://cl74ihm1ywf1c" path="res://portal/portal.tscn" id="4_33m27"]
 [ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="5_7ldjl"]
 [ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="6_7ldjl"]
@@ -17,7 +17,7 @@ position = Vector2(-120, -56)
 
 [node name="Goal" parent="." index="2" unique_id=667824316 instance=ExtResource("2_sl44i")]
 position = Vector2(-24, 0)
-next = ExtResource("3_8ykyq")
+next = ExtResource("3_7ldjl")
 
 [node name="Portal" parent="." index="4" unique_id=1416579862 instance=ExtResource("4_33m27")]
 position = Vector2(-48, -8)
