@@ -6,6 +6,7 @@ signal mutated(color:MutagenColor)
 
 const CELL_SIZE = 8
 const TrailEffect = preload("res://effects/trail_effect.tscn")
+const MUTATE_SOUND = preload("res://assets/lever.ogg")
 
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
@@ -78,6 +79,7 @@ func mutate(mutagen_color:MutagenColor) -> void:
 	self.mutagen_color = mutagen_color
 	modulate = mutagen_color.color
 	mutated.emit(mutagen_color)
+	AudioManager.play_sound(MUTATE_SOUND)
 
 
 func _on_input_throttle() -> void:

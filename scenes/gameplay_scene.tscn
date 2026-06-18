@@ -45,6 +45,7 @@ tile_set = ExtResource("1_01stm")
 [node name="Player" parent="." unique_id=1337450750 instance=ExtResource("2_b2a1o")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=948932488]
+position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1605721186]
 
