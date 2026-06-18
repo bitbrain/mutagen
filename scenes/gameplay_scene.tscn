@@ -3,38 +3,6 @@
 [ext_resource type="TileSet" uid="uid://dvqrmlfy6sv7o" path="res://assets/tileset.tres" id="1_01stm"]
 [ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
-[ext_resource type="Shader" uid="uid://dga1eh6177ior" path="res://assets/crt.gdshader" id="4_mvhas"]
-[ext_resource type="Shader" uid="uid://dg3jaf61ru2e4" path="res://assets/glow.gdshader" id="5_27dq3"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_27dq3"]
-shader = ExtResource("4_mvhas")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0290000013775
-shader_parameter/scanlines_width = 0.4400000209
-shader_parameter/grille_opacity = 0.1110000052725
-shader_parameter/resolution = Vector2(960, 540)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 2.0
-shader_parameter/roll_size = 22.44400106609
-shader_parameter/roll_variation = 0.37500001455262
-shader_parameter/distort_intensity = 0.010000000475
-shader_parameter/noise_opacity = 0.03200000152
-shader_parameter/noise_speed = 2.0
-shader_parameter/static_noise_intensity = 0.0150000007125
-shader_parameter/aberration = 0.01000004797499998
-shader_parameter/brightness = 1.0
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1126i"]
-shader = ExtResource("5_27dq3")
-shader_parameter/hpass = 0.40000000596048
-shader_parameter/vpass = 0.5000000074506
-shader_parameter/radius = 5
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
 script = ExtResource("1_xpbwm")
@@ -48,16 +16,6 @@ tile_set = ExtResource("1_01stm")
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1605721186]
-
-[node name="CRTEffect" type="ColorRect" parent="CanvasLayer" unique_id=788377038]
-visible = false
-material = SubResource("ShaderMaterial_27dq3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="TokensLabel" type="Label" parent="CanvasLayer" unique_id=651220219]
 unique_name_in_owner = true
@@ -76,11 +34,3 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "0"
 horizontal_alignment = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2131533729]
-material = SubResource("ShaderMaterial_1126i")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2

@@ -3,6 +3,7 @@ class_name Portal extends Node2D
 
 
 const TELEPORT_DURATION_SECONDS = 1.1
+const TRANSITION_SECONDS = 0.3
 const PORTAL_SOUND = preload("res://assets/portal.ogg")
 
 
@@ -50,17 +51,19 @@ func _initiate_teleport(player:Player, portal:Portal) -> void:
 	player.frozen = true
 	AudioManager.play_sound(PORTAL_SOUND)
 	var teleport_tween = create_tween()
-	teleport_tween.tween_property(VFX, "vigniette_amount", 1.0, TELEPORT_DURATION_SECONDS)\
+	teleport_tween.tween_property(VFX, "transition_amount", 0.0, TRANSITION_SECONDS)\
 	.finished.connect(_teleport_player.bind(player, portal))
-
 	
 
 func _teleport_player(player:Player, portal:Portal) -> void:
 	player.global_position = portal.global_position
 	portal.just_teleported = true
 	var teleport_tween = create_tween()
-	teleport_tween.tween_property(VFX, "vigniette_amount", 0.0, 0.3)
-	player.frozen = false
+	teleport_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_SECONDS)\
+	.set_delay(TELEPORT_DURATION_SECONDS - TRANSITION_SECONDS)\
+	.finished.connect(func():	
+		player.frozen = false
+		)
 
 
 func _update_color() -> void:
