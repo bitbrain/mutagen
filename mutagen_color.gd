@@ -38,11 +38,18 @@ static func resolve(key:String) -> MutagenColor:
 	if key in PLACEHOLDERS:
 		key = PLACEHOLDERS[key]
 	if key in COLOR_MAP:
-		return MutagenColor.new(COLOR_MAP[key], key)
-	return MutagenColor.new(Color(COLOR_MAP["none"])	, "none")
+		return MutagenColor.new(COLOR_MAP[key], key)	
+	return MutagenColor.new(Color(COLOR_MAP["none"]), "none")
 
 
 static func resolve_multiple(colorA:String, colorB:String) -> MutagenColor:
+	# game juice: instantly swap to incompatible color
+	# to avoid mandatory swap to 'none' and back.
+	if colorA != colorB && "," in colorA:
+		return resolve(colorB)
+	if colorA != colorB && "," in colorB:
+		return resolve(colorA)
+	
 	var key_array = [colorA, colorB]
 	# ensure to clear cheeky values
 	key_array.erase("none")

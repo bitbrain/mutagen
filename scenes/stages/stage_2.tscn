@@ -41,7 +41,6 @@ mutation_color = "green"
 
 [node name="Door4" parent="." index="9" unique_id=495519620 instance=ExtResource("3_llf8k")]
 position = Vector2(-48, -32)
-mutation_color = "magenta"
 
 [node name="Door5" parent="." index="10" unique_id=607351301 instance=ExtResource("3_llf8k")]
 position = Vector2(48, -32)
