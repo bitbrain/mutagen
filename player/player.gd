@@ -14,6 +14,7 @@ const TrailEffect = preload("res://effects/trail_effect.tscn")
 
 var movable = true
 var pressing = false
+var frozen = false
 var mutagen_color = MutagenColor.DEFAULT
 var last_position:Vector2 = Vector2.ZERO
 
@@ -23,6 +24,8 @@ func _ready() -> void:
 	input_delay_timer.timeout.connect(func(): pressing = true)
 
 func _physics_process(delta: float) -> void:
+	if frozen:
+		return
 	if pressing and not Input.is_anything_pressed():
 		pressing = false
 	if not pressing and Input.is_anything_pressed():

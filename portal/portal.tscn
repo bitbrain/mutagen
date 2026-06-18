@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vrfwa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 6.0
 }]
@@ -46,8 +46,10 @@ size = Vector2(8, 8)
 script = ExtResource("1_508n2")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=324426829]
+modulate = Color(0.9529412, 0.5294118, 0.5294118, 1)
 sprite_frames = SubResource("SpriteFrames_sfjos")
 autoplay = "default"
+frame = 3
 centered = false
 
 [node name="CollisionArea" type="Area2D" parent="." unique_id=970039632]

@@ -2,6 +2,11 @@
 class_name Portal extends Node2D
 
 
+const TELEPORT_DURATION_SECONDS = 1.1
+const PORTAL_SOUND = preload("res://assets/portal.ogg")
+
+
+
 @export_enum("red", "green", "blue", "yellow", "magenta", "cyan") var mutation_color = "red":
 	set(mc):
 		mutation_color = mc
@@ -38,12 +43,24 @@ func _player_entered(player) -> void:
 			if portal.get_instance_id() == get_instance_id():
 				continue
 			if mutagen_color.is_same(portal.mutagen_color):
-				_teleport_player(player, portal)
+				_initiate_teleport(player, portal)
 
+
+func _initiate_teleport(player:Player, portal:Portal) -> void:
+	player.frozen = true
+	AudioManager.play_sound(PORTAL_SOUND)
+	var teleport_tween = create_tween()
+	teleport_tween.tween_property(VFX, "vigniette_amount", 1.0, TELEPORT_DURATION_SECONDS)\
+	.finished.connect(_teleport_player.bind(player, portal))
+
+	
 
 func _teleport_player(player:Player, portal:Portal) -> void:
 	player.global_position = portal.global_position
 	portal.just_teleported = true
+	var teleport_tween = create_tween()
+	teleport_tween.tween_property(VFX, "vigniette_amount", 0.0, 0.3)
+	player.frozen = false
 
 
 func _update_color() -> void:

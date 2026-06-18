@@ -16,10 +16,15 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.19607843, 0.19215687, 0.23137255, 1)
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://donn6a1n41opx"
+
 [autoload]
 
 PlayerStats="*uid://cbr4gswodnguh"
 AudioManager="*uid://xvwi6xhm12d6"
+VFX="*uid://d0cjj6305dmr2"
 
 [display]
 
