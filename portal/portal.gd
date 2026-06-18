@@ -35,7 +35,7 @@ func _player_entered(player) -> void:
 		var portals = get_tree().get_nodes_in_group("portal")
 		for portal in portals:
 			# let's not teleport to self
-			if portal.get_instaance_id() == get_instance_id():
+			if portal.get_instance_id() == get_instance_id():
 				continue
 			if mutagen_color.is_same(portal.mutagen_color):
 				_teleport_player(player, portal)

@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(motion)
 	
 	# avoid awkward positioning between pixels
-	position = position.snapped(Vector2(1, 1))
+	position = position.snapped(Vector2(CELL_SIZE, CELL_SIZE))
 	
 	if last_position.direction_to(position).length() > 0:
 		var trail_effect = TrailEffect.instantiate() as Node2D
