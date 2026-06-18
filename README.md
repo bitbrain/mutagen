@@ -14,6 +14,12 @@ Mutagen is a puzzle game where the player traverses various rooms with doors. Th
 3. no UI or mouse dependencies
 4. Mobile/Browser friendly.
 
+# Game Loop
+1. Player enters stage
+2. Player sees portal but portal is inactive
+3. Player must find fragments to unlock portal
+4. Player gathered all fragments and portal now activates (with animation)
+
 ## Win Condition
 
 The player traversed all levels and reached the end.
