@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lhul2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 6.0
 }]
@@ -126,5 +126,6 @@ texture = SubResource("AtlasTexture_swnbh")
 [node name="Area2D" type="Area2D" parent="." unique_id=189219202]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=716464481]
+visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_h3eg0")

@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+class_name Mutagen extends Node2D
 
 
 @export_enum("red", "green", "blue") var mutation_color = "red":

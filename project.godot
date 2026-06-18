@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+instance_dock/preview_resolution=Vector2i(8, 8)
+
 [application]
 
 config/name="Mutagen"

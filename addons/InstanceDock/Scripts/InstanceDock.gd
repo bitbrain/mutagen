@@ -5,9 +5,11 @@ const PluginUtils = preload("res://addons/InstanceDock/PluginUtils.gd")
 const PROJECT_SETTING_CONFIG = "addons/instance_dock/scene_data_file"
 const PROJECT_SETTING_LEGACY = "addons/instance_dock/scenes"
 const PROJECT_SETTING_PREVIEW = "addons/instance_dock/preview_resolution"
+const PROJECT_SETTING_PREVIEW_OFFSET = "addons/instance_dock/preview_offset"
 const CACHE_PATH = "res://.godot/InstanceIconCache"
 
 var PREVIEW_SIZE = Vector2i(64, 64)
+var PREVIEW_OFFSET = Vector2i(0, 0)
 var CONFIG_FILE = "res://InstanceDockSceneData.txt"
 
 enum {SLOT_MODE_ICONS, SLOT_MODE_TEXT, REFRESH_ALL_PREVIEWS}
@@ -87,6 +89,8 @@ func _ready() -> void:
 	
 	PREVIEW_SIZE = PluginUtils.define_project_setting(PROJECT_SETTING_PREVIEW, PREVIEW_SIZE)
 	icon_generator.size = PREVIEW_SIZE
+	
+	PREVIEW_OFFSET = PluginUtils.define_project_setting(PROJECT_SETTING_PREVIEW_OFFSET, PREVIEW_OFFSET)
 	
 	PluginUtils.track_project_setting(PROJECT_SETTING_CONFIG, self, _project_setting_changed)
 	PluginUtils.track_project_setting(PROJECT_SETTING_PREVIEW, self, _project_setting_changed)
@@ -320,7 +324,7 @@ func _process(delta: float) -> void:
 		0:
 			icon_generator.add_child(instance)
 			if instance is Node2D:
-				instance.position = PREVIEW_SIZE / 2
+				instance.position = Vector2(0.0, 0.0)
 		3:
 			var image = icon_generator.get_texture().get_image()
 			image.save_png(CACHE_PATH.path_join("%s.png" % slot.get_hash()))

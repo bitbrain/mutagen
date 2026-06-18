@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="3_mm8m8"]
 [ext_resource type="PackedScene" uid="uid://kr56odiaa8ik" path="res://door/door.tscn" id="4_7abwa"]
 [ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="5_1c2ek"]
+[ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="6_1c2ek"]
 
 [node name="GameplayScene" unique_id=15941419 instance=ExtResource("1_r63aq")]
 
@@ -138,3 +139,12 @@ other = NodePath("../Portal12")
 position = Vector2(-40, -104)
 mutation_color = "cyan"
 other = NodePath("../Portal11")
+
+[node name="Mutagen9" parent="." index="33" unique_id=2104562371 instance=ExtResource("3_mm8m8")]
+position = Vector2(-24, -160)
+
+[node name="Door9" parent="." index="34" unique_id=218834788 instance=ExtResource("4_7abwa")]
+position = Vector2(0, -168)
+
+[node name="Goal" parent="." index="35" unique_id=667824316 instance=ExtResource("6_1c2ek")]
+position = Vector2(-16, -184)
