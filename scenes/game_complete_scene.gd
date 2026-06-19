@@ -8,15 +8,18 @@ const TRANSITION_DELAY = 0.3
 
 
 @onready var button: Button = %Button
-@onready var token_count: Label = %TokenCount
+
+@onready var timings_container: VBoxContainer = $CanvasLayer/CenterContainer/VBoxContainer/TimingsContainer
+@onready var total_time_label: Label = $CanvasLayer/CenterContainer/VBoxContainer/TotalTimeLabel
 
 
 func _ready() -> void:
-	var tokens = PlayerStats.get_tokens()
-	PlayerStats.reset(true)
-	token_count.text = "You found " + str(tokens) + "token" + ("" if tokens == 1 else "s")
-	button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/stages/stage_1.tscn"))
-
-	var transition_tween = create_tween()
-	transition_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)\
-	.set_delay(TRANSITION_DELAY)
+	total_time_label.text = PlayerStats.get_total_time_string()
+	var timings = PlayerStats.get_stage_time_strings()
+	for timing in timings:
+		var label = Label.new()
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.add_theme_font_size_override("font_size", 8)
+		label.text = timing
+		timings_container.add_child(label)
+	

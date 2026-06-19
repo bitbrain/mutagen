@@ -6,14 +6,11 @@ const TRANSITION_DELAY = 0.3
 
 
 @onready var player: Player = $Player
-@onready var tokens_label: Label = %TokensLabel
+@onready var times_label: Label = %TimesLabel
 
 
 
 func _ready() -> void:
-	PlayerStats.reset()
-	tokens_label.text = str(PlayerStats.get_tokens())
-	PlayerStats.token_gathered.connect(func(tokens): tokens_label.text = str(tokens))
 	player.mutated.connect(_player_mutated)
 	
 	var transition_tween = create_tween()
@@ -29,7 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-
+	times_label.text = PlayerStats.get_total_time_string()
 
 func _player_mutated(mutagen_color:MutagenColor):
 	get_tree().call_group("door", "change_mutation", mutagen_color)

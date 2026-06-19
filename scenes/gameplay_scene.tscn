@@ -17,20 +17,23 @@ position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1605721186]
 
-[node name="TokensLabel" type="Label" parent="CanvasLayer" unique_id=651220219]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1381178822]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -13.0
-offset_right = -2.0
-offset_bottom = 1.0
+offset_left = -49.0
+offset_top = -11.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_constants/margin_right = 2
+
+[node name="TimesLabel" type="Label" parent="CanvasLayer/MarginContainer" unique_id=651220219]
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "0"
+theme_override_font_sizes/font_size = 8
+text = "00:00:000"
 horizontal_alignment = 2

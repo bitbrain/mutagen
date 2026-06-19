@@ -14,6 +14,5 @@ func _ready() -> void:
 
 
 func _player_entered(player:Player) -> void:
-	PlayerStats.increment_new_tokens()
 	AudioManager.play_sound(COLLECT_SOUND)
 	queue_free()

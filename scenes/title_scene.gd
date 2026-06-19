@@ -13,6 +13,7 @@ func _ready() -> void:
 	AudioManager.play_music(GameplayMusic)
 	play.pressed.connect(func(): 
 		var transition_tween = create_tween()
+		PlayerStats.start_stage_time()
 		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
 		.finished.connect(get_tree().change_scene_to_packed.bind(Stage1))
 	)

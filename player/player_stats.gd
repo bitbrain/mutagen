@@ -1,29 +1,72 @@
 extends Node
 
 
-signal token_gathered(tokens:int)
+var times:Array[float] = []
+var current_start_time = 0
+var start_time = 0
+var stage = 1
 
 
-var tokens = 0
-var new_tokens = 0
+func next_stage() -> void:
+	stage += 1
+	
+	
+func get_current_stage() -> int:
+	return stage
 
 
-func get_tokens() -> int:
-	return tokens + new_tokens
+func get_current_stage_time_string() -> String:
+	return _format_time(get_current_stage_time())
+	
+	
+func get_total_time_string() -> String:
+	return _format_time(get_total_time())
+	
+
+func get_total_time() -> float:
+	return Time.get_unix_time_from_system() - start_time
 
 
-func increment_new_tokens() -> int:
-	new_tokens += 1
-	token_gathered.emit(tokens + new_tokens)
-	return tokens
+func get_current_stage_time() -> float:
+	return Time.get_unix_time_from_system() - current_start_time
 
 
-func commit() -> void:
-	tokens = tokens + new_tokens
-	new_tokens = 0
+func get_stage_times() -> Array[float]:
+	return times
+	
+	
+func get_stage_time_strings() -> Array[String]:
+	var string_times:Array[String] = []
+	for i in times:
+		string_times.append(_format_time(i))
+	return string_times
 
 
-func reset(hard = false) -> void:
-	new_tokens = 0
-	if hard:
-		tokens = 0
+func get_stage_time_millis(stage:int) -> float:
+	if times.size() < stage:
+		return 0
+	return times[stage]
+
+
+func finish_stage_time(stage:int) -> void:
+	times.append(get_current_stage_time())
+
+
+func start_stage_time() -> void:
+	current_start_time = Time.get_unix_time_from_system()
+	if start_time == 0:
+		start_time = current_start_time
+
+
+func reset() -> void:
+	current_start_time = 0
+	start_time = 0
+	times.clear()
+	stage = 1
+
+
+func _format_time(total_seconds:float) -> String:
+	var seconds = fmod(total_seconds, 60.0)
+	var minutes = int(total_seconds / 60.0) % 60
+	var millis = floor((float(total_seconds * 1000.0) - float(minutes * 60000.0) - float(seconds * 1000.0))/100.0)
+	return "%02d:%02d:%03d" % [minutes, seconds, millis]
