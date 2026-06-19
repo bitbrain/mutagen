@@ -6,7 +6,7 @@ signal mutated(color:MutagenColor)
 
 const CELL_SIZE = 8
 const TrailEffect = preload("res://effects/trail_effect.tscn")
-const MUTATE_SOUND = preload("res://assets/lever.ogg")
+const MUTATE_SOUND = preload("res://assets/mutate.ogg")
 
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
