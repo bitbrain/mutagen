@@ -3,6 +3,7 @@ extends Node2D
 
 
 signal teleport_attempted
+signal portal_opened
 
 
 @export var next:PackedScene
@@ -10,17 +11,23 @@ signal teleport_attempted
 
 @onready var area_2d: Area2D = $Area2D
 @onready var portal_sprite: AnimatedSprite2D = $Sprite2D
+@onready var goal_timer: Timer = $GoalTimer
 
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		portal_sprite.visible = false
 	area_2d.body_entered.connect(_player_entered)
+	goal_timer.timeout.connect(
+		func():
+			portal_sprite.visible = true
+			portal_opened.emit()
+	)
 	
 
 func open_portal() -> void:
-	portal_sprite.visible = true
-	
+	goal_timer.start()
+
 	
 func is_portal_open() -> bool:
 	return portal_sprite.visible

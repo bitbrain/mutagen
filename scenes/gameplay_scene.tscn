@@ -7,13 +7,16 @@
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
 script = ExtResource("1_xpbwm")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=948932488]
+limit_enabled = false
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1042025763]
 tile_set = ExtResource("1_01stm")
 
 [node name="Player" parent="." unique_id=1337450750 instance=ExtResource("2_b2a1o")]
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=948932488]
-position_smoothing_enabled = true
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1403934426]
+remote_path = NodePath("../../Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1605721186]
 

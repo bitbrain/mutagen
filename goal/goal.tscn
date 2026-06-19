@@ -129,3 +129,7 @@ texture = SubResource("AtlasTexture_swnbh")
 visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_h3eg0")
+
+[node name="GoalTimer" type="Timer" parent="." unique_id=488764261]
+wait_time = 2.0
+one_shot = true
