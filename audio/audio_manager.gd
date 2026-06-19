@@ -1,7 +1,7 @@
 extends Node
 
 
-const MUSIC_VOLUME_DB = -25
+const MUSIC_VOLUME_DB = 0
 
 
 var music_stream_player:AudioStreamPlayer
@@ -9,6 +9,7 @@ var music_stream_player:AudioStreamPlayer
 
 func _ready() -> void:
 	music_stream_player = AudioStreamPlayer.new()
+	music_stream_player.bus = &"Music"
 	add_child(music_stream_player)
 
 

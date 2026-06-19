@@ -2,7 +2,7 @@ extends Node2D
 
 
 const Stage1 = preload("res://scenes/stages/stage_tutorial.tscn")
-const GameplayMusic = preload("res://assets/soundtrack-gameplay.ogg")
+const GameplayMusic = preload("res://assets/virus.ogg")
 const MENU_SOUND = preload("res://assets/menu.ogg")
 
 @onready var play: Button = %Play
