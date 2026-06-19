@@ -69,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_th5fm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 12.0
 }]
@@ -77,7 +77,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apco0"]
 size = Vector2(8, 8)
 
-[node name="Token" type="Node2D" unique_id=1113412797]
+[node name="Token" type="Node2D" unique_id=1113412797 groups=["token"]]
 script = ExtResource("1_gy0pe")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1001841768]

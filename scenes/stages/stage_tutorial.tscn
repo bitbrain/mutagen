@@ -20,17 +20,17 @@ position = Vector2(-72, 0)
 position = Vector2(-56, 0)
 mutation_color = "blue"
 
-[node name="Door" parent="." index="4" unique_id=920625083 instance=ExtResource("3_qy3bl")]
+[node name="Mutagen3" parent="." index="4" unique_id=1160748657 instance=ExtResource("2_0x871")]
+position = Vector2(-8, -8)
+mutation_color = "blue"
+
+[node name="Door" parent="." index="5" unique_id=920625083 instance=ExtResource("3_qy3bl")]
 position = Vector2(-16, 0)
 rotation = 1.5707964
 mutation_color = "blue"
 
-[node name="Mutagen2" parent="." index="5" unique_id=1837432425 instance=ExtResource("2_0x871")]
-position = Vector2(8, 0)
-mutation_color = "green"
-
-[node name="Door2" parent="." index="6" unique_id=1835911593 instance=ExtResource("3_qy3bl")]
-position = Vector2(0, -24)
+[node name="Mutagen2" parent="." index="6" unique_id=1837432425 instance=ExtResource("2_0x871")]
+position = Vector2(8, 8)
 mutation_color = "green"
 
 [node name="Door3" parent="." index="7" unique_id=1561405574 instance=ExtResource("3_qy3bl")]

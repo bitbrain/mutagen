@@ -109,7 +109,7 @@ region = Rect2(0, 56, 8, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3eg0"]
 size = Vector2(8, 8)
 
-[node name="Goal" type="Node2D" unique_id=667824316]
+[node name="Goal" type="Node2D" unique_id=667824316 groups=["goal"]]
 script = ExtResource("1_7c8bl")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=917148340]

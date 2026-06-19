@@ -29,6 +29,7 @@ buses/default_bus_layout="uid://donn6a1n41opx"
 PlayerStats="*uid://cbr4gswodnguh"
 AudioManager="*uid://xvwi6xhm12d6"
 VFX="*uid://d0cjj6305dmr2"
+Toast="*uid://bljx3rmkuroy2"
 
 [display]
 
@@ -47,6 +48,8 @@ enabled=PackedStringArray("res://addons/InstanceDock/plugin.cfg")
 
 interactible=""
 portal=""
+token=""
+goal=""
 
 [gui]
 

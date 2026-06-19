@@ -2,6 +2,9 @@
 extends Node2D
 
 
+signal collected
+
+
 const COLLECT_SOUND = preload("res://assets/collect.ogg")
 
 
@@ -15,4 +18,5 @@ func _ready() -> void:
 
 func _player_entered(player:Player) -> void:
 	AudioManager.play_sound(COLLECT_SOUND)
+	collected.emit()
 	queue_free()
