@@ -36,7 +36,7 @@ func _player_entered(player) -> void:
 		return
 	if player.mutagen_color.is_same(self.mutagen_color):
 		if other:
-			_teleport_player(player, other)
+			_initiate_teleport(player, other)
 			return
 		var portals = get_tree().get_nodes_in_group("portal")
 		for portal in portals:

@@ -14,6 +14,7 @@ limit_enabled = false
 tile_set = ExtResource("1_01stm")
 
 [node name="Player" parent="." unique_id=1337450750 instance=ExtResource("2_b2a1o")]
+z_index = 1
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1403934426]
 remote_path = NodePath("../../Camera2D")

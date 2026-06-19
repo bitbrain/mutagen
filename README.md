@@ -22,11 +22,11 @@ Mutagen is a puzzle game where the player traverses various rooms with doors. Th
 
 ## Win Condition
 
-The player traversed all levels and reached the end.
+The player traversed all levels and reached the end with a new best time record.
 
 ## Lose Condition
 
-One cannot really lose but one can always reset a level if one gets stuck.
+One cannot really lose but one can always reset a level if one gets stuck. Player may perform worse in total time and needs to try again to be faster.
 
 ## Color Combinations
 
@@ -44,4 +44,7 @@ One cannot really lose but one can always reset a level if one gets stuck.
 - Mutagen collectibles
 - Mutagen Pressure plate: rotates mutagens in the world when stepping on it
 - Door Pressure plate: rotates door colors in the world when stepping on it
-- (optional) Orbs: collectibles to satisfy completionists
+
+## Speed Running
+
+This game is aimed at speed runners. That's why time tracking per stage is a core part of this game. To further enhance speed running skill, the player may accellerate when not stopping/pausing. As soon player stops, speed multiplier resets.
