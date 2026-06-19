@@ -111,7 +111,6 @@ mutation_color = "magenta"
 
 [node name="Door7" parent="." index="26" unique_id=888599143 instance=ExtResource("4_q4drp")]
 position = Vector2(-64, -128)
-mutation_color = "magenta"
 
 [node name="Mutagen8" parent="." index="27" unique_id=786010151 instance=ExtResource("2_a7i70")]
 position = Vector2(-80, -112)

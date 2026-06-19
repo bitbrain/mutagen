@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cgklx1832tyen" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
-radius = 3.8
+radius = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
 atlas = ExtResource("1_oul6g")
@@ -40,7 +40,6 @@ motion_mode = 1
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1737062558]
-visible = false
 position = Vector2(4, 4)
 shape = SubResource("CircleShape2D_rkbax")
 

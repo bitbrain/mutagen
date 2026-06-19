@@ -41,7 +41,11 @@ func _player_entered(player:Player) -> void:
 	PlayerStats.finish_stage_time(PlayerStats.get_current_stage())
 	PlayerStats.next_stage()
 	PlayerStats.start_stage_time()
+	player.frozen = true
 	var transition_tween = create_tween()
 	transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
-	.finished.connect(get_tree().change_scene_to_packed.bind(next))
+	.finished.connect(func():
+		player.frozen = false
+		get_tree().change_scene_to_packed(next)
+		)
 	
