@@ -15,10 +15,15 @@ instance_dock/preview_resolution=Vector2i(8, 8)
 [application]
 
 config/name="Mutagen"
+config/version="1.0.0"
 run/main_scene="uid://dpw3bcydya3jq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.19607843, 0.19215687, 0.23137255, 1)
-config/icon="res://icon.svg"
+boot_splash/use_filter=false
+boot_splash/image="uid://if8tajmdq36e"
+config/icon="uid://csc23cjcc8rx7"
+config/windows_native_icon="res://assets/icon.ico"
+boot_splash/minimum_display_time=2000
 
 [audio]
 

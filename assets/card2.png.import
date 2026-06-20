@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddprg7uakbcwy"
-path="res://.godot/imported/knightwood.png-9bb61a2271e4d5db5bad22c417cd2c59.ctex"
+uid="uid://dvmi54atgbh8g"
+path="res://.godot/imported/card2.png-63adf8ccc61be8479bc134349f5acb52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/knightwood.png"
-dest_files=["res://.godot/imported/knightwood.png-9bb61a2271e4d5db5bad22c417cd2c59.ctex"]
+source_file="res://assets/card2.png"
+dest_files=["res://.godot/imported/card2.png-63adf8ccc61be8479bc134349f5acb52.ctex"]
 
 [params]
 

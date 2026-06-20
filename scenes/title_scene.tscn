@@ -1,12 +1,83 @@
-[gd_scene format=3 uid="uid://dpw3bcydya3jq"]
+[gd_scene format=4 uid="uid://dpw3bcydya3jq"]
 
 [ext_resource type="Script" uid="uid://daw3112w5e2iw" path="res://scenes/title_scene.gd" id="1_6jsh8"]
-[ext_resource type="Texture2D" uid="uid://128agv4ybc3h" path="res://assets/logo.png" id="2_faptf"]
+[ext_resource type="TileSet" uid="uid://dvqrmlfy6sv7o" path="res://assets/tileset.tres" id="2_4k7ef"]
+[ext_resource type="Texture2D" uid="uid://ciyi86gwjn3tl" path="res://assets/logo-animated.png" id="3_bq8jb"]
+[ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="4_bq8jb"]
+[ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="5_l5n7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5n7b"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(0, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8xmt"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(146, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rdyk"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(292, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofksa"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(438, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ot34"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(584, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqobm"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(730, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ppm8"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(876, 0, 146, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bre4b"]
+atlas = ExtResource("3_bq8jb")
+region = Rect2(1022, 0, 146, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwh48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5n7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8xmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rdyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofksa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ot34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqobm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ppm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bre4b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="TitleScene" type="Node2D" unique_id=946803914]
 script = ExtResource("1_6jsh8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1468758971]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer" unique_id=118061677]
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAEAAAACAAUAAAAAAAEAAAACAAQAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAABAAEAAAAAAAEAAAABAAAAAAAAAAEAAAABAP//AAAAAAEAAAABAP7/AAAAAAEAAAACAAcAAAAAAAEAAAACAAgAAAAAAAEAAAADAAgAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAAAAEAAAD//wgAAAAAAAEAAAD//wkAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAGAAsAAAAAAAEAAAAFAAsAAAAAAAEAAAAEAAsAAAAAAAEAAAADAAsAAAAAAAEAAAACAAsAAAAAAAEAAAABAAsAAAAAAAEAAAABAAwAAAAAAAEAAAABAA0AAAAAAAEAAAACAA0AAAAAAAEAAAACAAwAAAAAAAEAAAADAAwAAAAAAAEAAAAEAAwAAAAAAAEAAAAFAAwAAAAAAAEAAAAFAAkAAAAAAAEAAAAFAAgAAAAAAAEAAAAFAAcAAAAAAAEAAAAFAAYAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAAEAAIAAAAAAAEAAAADAAIAAAAAAAEAAAADAAEAAAAAAAEAAAADAAAAAAAAAAEAAAADAP//AAAAAAEAAAAEAP//AAAAAAEAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAEAAAAUAA0AAAAAAAEAAAAUAAwAAAAAAAEAAAAUAAsAAAAAAAEAAAAUAAoAAAAAAAEAAAAUAAkAAAAAAAEAAAAVAAkAAAAAAAEAAAAVAAoAAAAAAAEAAAAVAAsAAAAAAAEAAAAVAAwAAAAAAAEAAAAVAA0AAAAAAAEAAAAVAA4AAAAAAAEAAAAWAAsAAAAAAAEAAAAWAAoAAAAAAAEAAAAWAAwAAAAAAAEAAAAWAA0AAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAFAP//AAAAAAEAAAAGAP//AAAAAAEAAAATAAoAAAAAAAEAAAATAAkAAAAAAAEAAAASAAkAAAAAAAEAAAARAAkAAAAAAAEAAAARAAsAAAAAAAEAAAASAAwAAAAAAAEAAAASAA0AAAAAAAEAAAASAA4AAAAAAAEAAAARAA0AAAAAAAEAAAARAAwAAAAAAAEAAAARAA4AAAAAAAEAAAAQAA0AAAAAAAEAAAAPAA0AAAAAAAEAAAAOAA0AAAAAAAEAAAAQAAsAAAAAAAEAAAAOAAoAAAAAAAEAAAANAAoAAAAAAAEAAAAMAAoAAAAAAAEAAAANAAkAAAAAAAEAAAAOAAkAAAAAAAEAAAAMAAkAAAAAAAEAAAAMAAgAAAAAAAEAAAAMAAcAAAAAAAEAAAALAAgAAAAAAAEAAAALAAkAAAAAAAEAAAALAAcAAAAAAAEAAAALAAYAAAAAAAEAAAAKAAYAAAAAAAEAAAAJAAYAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAUAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAUAAAAAAAEAAAANAAUAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAYAAAAAAAEAAAAQAAYAAAAAAAEAAAARAAYAAAAAAAEAAAARAAcAAAAAAAEAAAASAAcAAAAAAAEAAAATAAcAAAAAAAEAAAAUAAcAAAAAAAEAAAAVAAcAAAAAAAEAAAAWAAcAAAAAAAEAAAAVAAYAAAAAAAEAAAAWAAYAAAAAAAEAAAAXAAcAAAAAAAEAAAAXAAgAAAAAAAEAAAAYAAgAAAAAAAEAAAAYAAkAAAAAAAEAAAAYAAoAAAAAAAEAAAAYAAsAAAAAAAEAAAAZAAsAAAAAAAEAAAAZAAoAAAAAAAEAAAAZAAkAAAAAAAEAAAAWAAUAAAAAAAEAAAAXAAUAAAAAAAEAAAAWAAQAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAYAAAAAAAEAAAAUAAQAAAAAAAEAAAAUAAMAAAAAAAEAAAATAAMAAAAAAAEAAAATAAQAAAAAAAEAAAATAAUAAAAAAAEAAAATAAIAAAAAAAEAAAAUAAIAAAAAAAEAAAAUAAEAAAAAAAEAAAAUAAAAAAAAAAEAAAATAAAAAAAAAAEAAAATAAEAAAAAAAEAAAAWAAIAAAAAAAEAAAAWAAEAAAAAAAEAAAAWAAAAAAAAAAEAAAAWAP//AAAAAAEAAAAWAP7/AAAAAAEAAAAXAAEAAAAAAAEAAAAXAAIAAAAAAAEAAAAXAAAAAAAAAAEAAAAXAP//AAAAAAEAAAAXAP7/AAAAAAEAAAAYAAAAAAAAAAEAAAAYAAEAAAAAAAEAAAAYAAIAAAAAAAEAAAARAAEAAAAAAAEAAAARAAAAAAAAAAEAAAARAP//AAAAAAEAAAARAP7/AAAAAAEAAAAQAAAAAAAAAAEAAAAPAAAAAAAAAAEAAAAOAAAAAAAAAAEAAAANAAAAAAAAAAEAAAAMAAAAAAAAAAEAAAANAAEAAAAAAAEAAAAOAAEAAAAAAAEAAAAPAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAAAAAAAAAAEAAAAKAP//AAAAAAEAAAAKAP7/AAAAAAEAAAAJAP//AAAAAAEAAAAJAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAALAAUAAAAAAAEAAAALAAQAAAAAAAEAAAALAAMAAAAAAAEAAAAJAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAAKAAsAAAAAAAEAAAAJAAsAAAAAAAEAAAAJAAwAAAAAAAEAAAAJAA0AAAAAAAEAAAAIAA0AAAAAAAEAAAAKAAwAAAAAAAEAAAAKAA0AAAAAAAEAAAAIAA4AAAAAAAEAAAAJAA4AAAAAAAEAAAALAA0AAAAAAAEAAAAMAA0AAAAAAAEAAAA=")
+tile_set = ExtResource("2_4k7ef")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=365465445]
 anchors_preset = 15
@@ -17,16 +88,21 @@ grow_vertical = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=386303102]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=295396618]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer2/CenterContainer" unique_id=468707369]
+[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer2/CenterContainer" unique_id=591545495]
+custom_minimum_size = Vector2(146, 42)
 layout_mode = 2
-texture = ExtResource("2_faptf")
-stretch_mode = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/CenterContainer/VBoxContainer2/CenterContainer/Control" unique_id=442104300]
+sprite_frames = SubResource("SpriteFrames_lwh48")
+autoplay = "default"
+frame_progress = 0.5725449
+centered = false
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1343929679]
 layout_mode = 2
@@ -42,3 +118,36 @@ text = "Play"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1516233022]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer2/MarginContainer" unique_id=912269915]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "game by bitbrain"
+horizontal_alignment = 1
+
+[node name="Mutagen" parent="CanvasLayer" unique_id=2023622897 instance=ExtResource("4_bq8jb")]
+position = Vector2(32, 56)
+mutation_color = "blue"
+
+[node name="Mutagen2" parent="CanvasLayer" unique_id=1202646607 instance=ExtResource("4_bq8jb")]
+position = Vector2(144, 80)
+
+[node name="Mutagen3" parent="CanvasLayer" unique_id=551471701 instance=ExtResource("4_bq8jb")]
+position = Vector2(128, 8)
+mutation_color = "green"
+
+[node name="Token" parent="CanvasLayer" unique_id=1113412797 instance=ExtResource("5_l5n7b")]
+position = Vector2(16, 24)
+
+[node name="Token2" parent="CanvasLayer" unique_id=381558050 instance=ExtResource("5_l5n7b")]
+position = Vector2(184, 72)
+
+[node name="Token3" parent="CanvasLayer" unique_id=1279613901 instance=ExtResource("5_l5n7b")]
+position = Vector2(104, 104)
+
+[node name="Token4" parent="CanvasLayer" unique_id=339270010 instance=ExtResource("5_l5n7b")]
+position = Vector2(168, 0)
