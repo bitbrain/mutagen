@@ -61,7 +61,6 @@ mutation_color = "cyan"
 other = NodePath("../Portal10")
 
 [node name="Portal10" parent="." index="12" unique_id=561234220 node_paths=PackedStringArray("other") instance=ExtResource("2_t8527")]
-visible = false
 position = Vector2(-24, -64)
 mutation_color = "cyan"
 other = NodePath("../Portal9")

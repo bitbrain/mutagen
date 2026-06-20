@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://qtr8chan3m1w"]
 
-[ext_resource type="FontFile" uid="uid://bv7f7atvoonwe" path="res://assets/retrogaming.ttf" id="1_5x3i2"]
+[ext_resource type="FontFile" uid="uid://dnmuqnd2x0gqx" path="res://assets/early-gameboy.ttf" id="1_5x3i2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl1kw"]
 
@@ -18,4 +18,5 @@ Button/styles/focus = SubResource("StyleBoxEmpty_lu33j")
 Button/styles/hover = SubResource("StyleBoxEmpty_5x3i2")
 Button/styles/normal = SubResource("StyleBoxEmpty_y61vb")
 Button/styles/pressed = SubResource("StyleBoxEmpty_wycmq")
+Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("1_5x3i2")

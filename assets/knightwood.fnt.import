@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://biths6wvrgjpi"
+path="res://.godot/imported/knightwood.fnt-7b3617f92f8083f216109f42e6374fc6.fontdata"
+
+[deps]
+
+source_file="res://assets/knightwood.fnt"
+dest_files=["res://.godot/imported/knightwood.fnt-7b3617f92f8083f216109f42e6374fc6.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

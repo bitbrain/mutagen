@@ -19,7 +19,17 @@ func _ready() -> void:
 	for timing in timings:
 		var label = Label.new()
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		label.add_theme_font_size_override("font_size", 8)
+		label.add_theme_font_size_override("font_size", 6)
 		label.text = timing
 		timings_container.add_child(label)
+	var fade_in_tween = create_tween()
+	fade_in_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)\
+	.set_delay(TRANSITION_DELAY)
+	
+	button.pressed.connect(func():
+		var transition_tween = create_tween()
+		PlayerStats.start_stage_time()
+		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
+		.finished.connect(get_tree().change_scene_to_file.bind("res://scenes/stages/stage_1.tscn"))
+		)
 	

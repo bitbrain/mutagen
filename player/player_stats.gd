@@ -68,5 +68,10 @@ func reset() -> void:
 func _format_time(total_seconds:float) -> String:
 	var seconds = fmod(total_seconds, 60.0)
 	var minutes = int(total_seconds / 60.0) % 60
-	var millis = floor((float(total_seconds * 1000.0) - float(minutes * 60000.0) - float(seconds * 1000.0))/100.0)
-	return "%02d:%02d" % [minutes, seconds]
+	
+	var total_ms = total_seconds * 1000.0
+	var minutes_ms = minutes * 60000.0
+	var seconds_ms = int(seconds) % 1000 * 1000.0
+	
+	var millis = floor((total_ms - minutes_ms - seconds_ms))
+	return "%02d:%02d:%03d" % [minutes, seconds, millis]

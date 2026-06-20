@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dvqrmlfy6sv7o" path="res://assets/tileset.tres" id="1_01stm"]
 [ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
+[ext_resource type="FontFile" uid="uid://dnmuqnd2x0gqx" path="res://assets/early-gameboy.ttf" id="4_mvhas"]
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
 script = ExtResource("1_xpbwm")
@@ -38,6 +39,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("4_mvhas")
+theme_override_font_sizes/font_size = 6
 text = "00:00:000"
 horizontal_alignment = 2
