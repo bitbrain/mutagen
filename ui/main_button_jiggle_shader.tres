@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bts1kx5r4fyta"]
+
+[ext_resource type="Shader" uid="uid://h26altva7265" path="res://assets/jiggle.gdshader" id="1_2nud0"]
+
+[resource]
+shader = ExtResource("1_2nud0")
+shader_parameter/text_color = Color(1, 1, 1, 1)
+shader_parameter/warp_frequency = 3.3230001578425
+shader_parameter/warp_amplitude = 0.5690000270275
+shader_parameter/warp_speed = 4.3990002089525

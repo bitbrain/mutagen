@@ -26,6 +26,10 @@ const PLACEHOLDERS = {
 	"cyan": "blue,green"
 }
 
+static var MUTAGEN_RED_COLOR = Color(COLOR_MAP["red"])
+static var MUTAGEN_GREEN_COLOR = Color(COLOR_MAP["green"])
+static var MUTAGEN_BLUE_COLOR = Color(COLOR_MAP["blue"])
+
 
 func is_same(other:MutagenColor) -> bool:
 	return key == other.key
