@@ -58,6 +58,42 @@ region = Rect2(80, 40, 8, 8)
 atlas = ExtResource("1_6aq0c")
 region = Rect2(88, 40, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h6dl"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(0, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6g6t"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(8, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2576g"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(16, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyr18"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(24, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5rqu"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(32, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pvq4"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(40, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xwxq"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(48, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saad5"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(56, 112, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ar13"]
+atlas = ExtResource("1_6aq0c")
+region = Rect2(0, 40, 8, 8)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_swnbh"]
 animations = [{
 "frames": [{
@@ -100,6 +136,38 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h6dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6g6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2576g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyr18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5rqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pvq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xwxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saad5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ar13")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 8.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swnbh"]
@@ -115,8 +183,10 @@ script = ExtResource("1_7c8bl")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=917148340]
 material = SubResource("ShaderMaterial_73eyi")
 sprite_frames = SubResource("SpriteFrames_swnbh")
+animation = &"open"
 autoplay = "default"
-frame_progress = 0.80542684
+frame = 8
+frame_progress = 1.0
 centered = false
 
 [node name="Overlay" type="Sprite2D" parent="." unique_id=237932465]
@@ -130,6 +200,10 @@ visible = false
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_h3eg0")
 
-[node name="GoalTimer" type="Timer" parent="." unique_id=488764261]
-wait_time = 2.0
+[node name="GoalTimer" type="Timer" parent="." unique_id=534446901]
+wait_time = 0.2
+one_shot = true
+
+[node name="PostOpenTimer" type="Timer" parent="." unique_id=562715802]
+wait_time = 0.75
 one_shot = true

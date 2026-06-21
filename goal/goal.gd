@@ -12,17 +12,30 @@ signal portal_opened
 @onready var area_2d: Area2D = $Area2D
 @onready var portal_sprite: AnimatedSprite2D = $Sprite2D
 @onready var goal_timer: Timer = $GoalTimer
+@onready var post_open_timer: Timer = $PostOpenTimer
+
+
+var opened = false
 
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		portal_sprite.visible = false
 	area_2d.body_entered.connect(_player_entered)
-	goal_timer.timeout.connect(
-		func():
-			portal_sprite.visible = true
-			portal_opened.emit()
+	portal_sprite.animation_finished.connect(func():
+		if portal_sprite.animation == "open":
+			portal_sprite.play("default")
+			post_open_timer.start()
+		)
+	goal_timer.timeout.connect(func():
+		portal_sprite.play("open")
+		portal_sprite.visible = true
 	)
+	# add slight delay after open for juice
+	post_open_timer.timeout.connect(func():
+		opened = true
+		portal_opened.emit()
+		)
 	
 
 func open_portal() -> void:
@@ -30,7 +43,7 @@ func open_portal() -> void:
 
 	
 func is_portal_open() -> bool:
-	return portal_sprite.visible
+	return opened
 	
 
 func _player_entered(node:Node2D) -> void:

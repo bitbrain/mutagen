@@ -137,7 +137,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"dissolve",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,7 +151,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"restore",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdd60"]
@@ -163,6 +163,7 @@ script = ExtResource("1_rdd60")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=695181295]
 modulate = Color(0.9529412, 0.5294118, 0.5294118, 1)
 sprite_frames = SubResource("SpriteFrames_plcny")
+animation = &"restore"
 autoplay = "default"
 centered = false
 
