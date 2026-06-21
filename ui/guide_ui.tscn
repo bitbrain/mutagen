@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://y3vorienuflt"]
+
+[ext_resource type="Script" uid="uid://0e6vgp3nffav" path="res://ui/guide_ui.gd" id="1_4lqwq"]
+[ext_resource type="Texture2D" uid="uid://bhkuymdq3fu7j" path="res://assets/guide.png" id="2_c5cu4"]
+[ext_resource type="Shader" uid="uid://bsernef5fwtwa" path="res://assets/rainbow.gdshader" id="3_7md1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lv1wd"]
+bg_color = Color(0.19607843, 0.19215687, 0.23137255, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwh48"]
+shader = ExtResource("3_7md1v")
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/angle = 0.0
+
+[node name="GuideUI" type="Panel" unique_id=592332549]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lv1wd")
+script = ExtResource("1_4lqwq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1408503764]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 184.0
+offset_bottom = 94.0
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2030511884]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=130823438]
+layout_mode = 2
+
+[node name="GuideCaption" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=168883282]
+layout_mode = 2
+text = "Colors"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=67459583]
+layout_mode = 2
+texture = ExtResource("2_c5cu4")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=752749497]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=584575272]
+layout_mode = 2
+text = "Controls"
+horizontal_alignment = 2
+
+[node name="MoveLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1913281673]
+layout_mode = 2
+text = "WASD: Move
+SPACE: PAUSE
+BACKSPACE: RESET
+ESCAPPE: GUIDE"
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=876024906]
+material = SubResource("ShaderMaterial_lwh48")
+layout_mode = 2
+text = "Press any key..."
+horizontal_alignment = 1

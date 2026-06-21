@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var transition_rect: ColorRect = $TransitionRect
 @onready var crt:ColorRect = $CRT
 @onready var overlay_rect: ColorRect = $OverlayRect
+@onready var guide_ui: Panel = $GuideUI
+
 
 
 var transition_amount = 0.0:
@@ -36,3 +38,8 @@ var overlay_opacity:float = 0.0:
 	set(oa):
 		overlay_opacity = oa
 		overlay_rect.color.a = overlay_opacity
+
+
+
+func guide() -> void:
+	guide_ui.visible = true

@@ -6,6 +6,7 @@ const GameplayMusic = preload("res://assets/virus.ogg")
 const MENU_SOUND = preload("res://assets/menu.ogg")
 
 @onready var play: Button = %Play
+@onready var guide: Button = %Guide
 @onready var quit: Button = %Quit
 
 
@@ -17,6 +18,7 @@ func _ready() -> void:
 		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
 		.finished.connect(get_tree().change_scene_to_file.bind(INTRO_STAGE_PATH))
 	)
+	guide.pressed.connect(VFX.guide)
 	quit.pressed.connect(func(): get_tree().quit())
 	
 	play.mouse_entered.connect(func(): AudioManager.play_sound(MENU_SOUND))
