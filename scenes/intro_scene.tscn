@@ -228,6 +228,7 @@ theme_override_constants/margin_bottom = 42
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer/MarginContainer" unique_id=1495806473]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
 custom_maximum_size = Vector2(150, -1)
 layout_mode = 2
 horizontal_alignment = 1
