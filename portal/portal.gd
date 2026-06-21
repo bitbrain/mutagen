@@ -53,8 +53,12 @@ func _initiate_teleport(player:Player, portal:Portal) -> void:
 	AudioManager.play_sound(PORTAL_SOUND)
 	var teleport_tween = create_tween()
 	# TODO: fix player animation with custom animation
-	teleport_tween.tween_property(player, "scale:y", 1.0, TRANSITION_SECONDS)\
+	teleport_tween.tween_property(VFX, "brightness", 1.6, TRANSITION_SECONDS)\
 	.finished.connect(_teleport_player.bind(player, portal))
+	
+	var abberation_tween = create_tween()
+	abberation_tween.tween_property(VFX, "aberration", 0.12, 1.0)
+	abberation_tween.tween_property(VFX, "aberration", 0.005, 0.5)
 	
 
 func _teleport_player(player:Player, portal:Portal) -> void:
@@ -63,7 +67,7 @@ func _teleport_player(player:Player, portal:Portal) -> void:
 	player.restore()
 	var teleport_tween = create_tween()
 	# TODO: fix player animation with custom animation
-	teleport_tween.tween_property(player, "scale:y", 1.0, TRANSITION_SECONDS)\
+	teleport_tween.tween_property(VFX, "brightness", 1.2, TRANSITION_SECONDS)\
 	.set_delay(TELEPORT_DURATION_SECONDS - TRANSITION_SECONDS)\
 	.finished.connect(func():	
 		player.frozen = false
