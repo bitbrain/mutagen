@@ -57,10 +57,9 @@ horizontal_alignment = 2
 
 [node name="MoveLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1913281673]
 layout_mode = 2
-text = "WASD: Move
-SPACE: PAUSE
+text = "WASD/Arrows: Move
 BACKSPACE: RESET
-ESCAPPE: GUIDE"
+ESCAPE: GUIDE"
 horizontal_alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=876024906]
