@@ -72,12 +72,16 @@ func _physics_process(delta: float) -> void:
 	position = position.snapped(Vector2(CELL_SIZE, CELL_SIZE))
 	
 	if last_position.direction_to(position).length() > 0:
+		var distance = position - last_position
+		
 		var trail_effect = TrailEffect.instantiate() as Node2D
-		trail_effect.position = last_position
 		trail_effect.modulate = modulate
 		get_parent().add_child(trail_effect)
 		
-		var distance = position - last_position
+		# animate trail -> it should move away from the player
+		trail_effect.position = last_position + (distance * 0.25)
+		var animate_trail_tween = create_tween()
+		animate_trail_tween.tween_property(trail_effect, "position", last_position, 0.5)
 		
 		# animate sprite
 		if animate_offset_tween:
