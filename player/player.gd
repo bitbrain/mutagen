@@ -11,6 +11,7 @@ const MUTATE_SOUND = preload("res://assets/mutate.ogg")
 
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
 @onready var input_delay_timer: Timer = $InputDelayTimer
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
 
 var movable = true
@@ -18,6 +19,7 @@ var pressing = false
 var frozen = false
 var mutagen_color = MutagenColor.DEFAULT
 var last_position:Vector2 = Vector2.ZERO
+var animate_offset_tween
 
 
 func _ready() -> void:
@@ -74,6 +76,17 @@ func _physics_process(delta: float) -> void:
 		trail_effect.position = last_position
 		trail_effect.modulate = modulate
 		get_parent().add_child(trail_effect)
+		
+		var distance = position - last_position
+		
+		# animate sprite
+		if animate_offset_tween:
+			animate_offset_tween.stop()
+		sprite.offset = -distance
+		animate_offset_tween = create_tween()
+		animate_offset_tween.tween_property(sprite, "offset", Vector2.ZERO, 0.05)
+		
+		
 		
 func mutate(mutagen_color:MutagenColor) -> void:
 	self.mutagen_color = mutagen_color
