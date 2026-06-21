@@ -20,6 +20,7 @@ var frozen = false
 var mutagen_color = MutagenColor.DEFAULT
 var last_position:Vector2 = Vector2.ZERO
 var animate_offset_tween
+var last_distance = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -71,8 +72,15 @@ func _physics_process(_delta: float) -> void:
 	# avoid awkward positioning between pixels
 	position = position.snapped(Vector2(CELL_SIZE, CELL_SIZE))
 	
+	var distance = position - last_position
+	
+	# flip sprite according to player orientation
+	sprite.flip_h = last_distance.x > 0
+	
 	if last_position.direction_to(position).length() > 0:
-		var distance = position - last_position
+		
+		if sprite.animation != "run":
+			sprite.animation = "run"
 		
 		var trail_effect = TrailEffect.instantiate() as Node2D
 		trail_effect.modulate = modulate
@@ -89,6 +97,10 @@ func _physics_process(_delta: float) -> void:
 		sprite.offset = -distance
 		animate_offset_tween = create_tween()
 		animate_offset_tween.tween_property(sprite, "offset", Vector2.ZERO, 0.05)
+		last_distance = distance
+	else:
+		if sprite.animation != "default":
+			sprite.animation = "default"
 		
 		
 func mutate(other_color:MutagenColor) -> void:
