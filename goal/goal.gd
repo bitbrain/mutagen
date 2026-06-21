@@ -2,6 +2,9 @@
 extends Node2D
 
 
+const GATE_SOUND = preload("uid://7evupsmbw7t5")
+
+
 signal teleport_attempted
 signal portal_opened
 
@@ -30,6 +33,9 @@ func _ready() -> void:
 	goal_timer.timeout.connect(func():
 		portal_sprite.play("open")
 		portal_sprite.visible = true
+		var abberation_tween = create_tween()
+		abberation_tween.tween_property(VFX, "aberration", 0.025, 1.0)
+		abberation_tween.tween_property(VFX, "aberration", 0.005, 0.5)
 	)
 	# add slight delay after open for juice
 	post_open_timer.timeout.connect(func():
@@ -39,6 +45,7 @@ func _ready() -> void:
 	
 
 func open_portal() -> void:
+	AudioManager.play_sound(GATE_SOUND)
 	goal_timer.start()
 
 	
