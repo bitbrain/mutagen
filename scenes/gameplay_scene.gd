@@ -53,7 +53,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
-		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+		# we could reset current scene but it makes more sense
+		# to start over, especially for second-perfect speed runs
+		# not this:
+		#get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+		# but this:
+		PlayerStats.reset()
+		PlayerStats.start_stage_time()
+		get_tree().change_scene_to_file("res://scenes/stages/stage_tutorial.tscn")
 	times_label.text = PlayerStats.get_total_time_string()
 	
 	#if Input.is_action_just_pressed("test"):
