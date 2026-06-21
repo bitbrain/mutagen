@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nqyeapgwcwj5" path="res://scenes/gameplay_scene.tscn" id="1_55ug7"]
 [ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="2_0x871"]
-[ext_resource type="Script" uid="uid://dvuv1jx8tvly6" path="res://scenes/stages/pause_handler.gd" id="2_nicmp"]
+[ext_resource type="Script" uid="uid://dvuv1jx8tvly6" path="res://scenes/pause_handler.gd" id="2_nicmp"]
 [ext_resource type="PackedScene" uid="uid://kr56odiaa8ik" path="res://door/door.tscn" id="3_qy3bl"]
 [ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="4_qy3bl"]
 [ext_resource type="PackedScene" uid="uid://dys3qxb737sue" path="res://goal/goal.tscn" id="5_ox8x7"]
