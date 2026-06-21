@@ -17,6 +17,7 @@ const MUTATE_SOUND = preload("res://assets/mutate.ogg")
 var movable = true
 var pressing = false
 var frozen = false
+var mutating = false
 var mutagen_color = MutagenColor.DEFAULT
 var last_position:Vector2 = Vector2.ZERO
 var animate_offset_tween
@@ -28,6 +29,8 @@ func _ready() -> void:
 	input_delay_timer.timeout.connect(func(): pressing = true)
 
 func _physics_process(_delta: float) -> void:
+	if mutating:
+		return
 	if frozen:
 		return
 	if pressing and not Input.is_anything_pressed():
@@ -80,7 +83,7 @@ func _physics_process(_delta: float) -> void:
 	if last_position.direction_to(position).length() > 0:
 		
 		if sprite.animation != "run":
-			sprite.animation = "run"
+			sprite.play("run")
 		
 		var trail_effect = TrailEffect.instantiate() as Node2D
 		trail_effect.modulate = modulate
@@ -100,14 +103,27 @@ func _physics_process(_delta: float) -> void:
 		last_distance = distance
 	else:
 		if sprite.animation != "default":
-			sprite.animation = "default"
+			sprite.play("default")
 		
 		
 func mutate(other_color:MutagenColor) -> void:
+	mutating = true
 	self.mutagen_color = other_color
 	modulate = mutagen_color.color
-	mutated.emit(mutagen_color)
 	AudioManager.play_sound(MUTATE_SOUND)
+	sprite.play("mutate")
+	sprite.animation_finished.connect(func():
+		mutating = false
+		mutated.emit(mutagen_color)
+		)
+	
+	
+func dissolve() -> void:
+	sprite.animation = "dissolve"
+	
+	
+func restore() -> void:
+	sprite.animation = "restore"
 
 
 func _on_input_throttle() -> void:
