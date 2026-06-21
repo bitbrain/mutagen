@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
 [ext_resource type="Script" uid="uid://54hi5gu852oy" path="res://pause_manager.gd" id="2_27dq3"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
+[ext_resource type="Script" uid="uid://db2xrfnd7maol" path="res://screen_shake_camera.gd" id="3_1126i"]
 [ext_resource type="FontFile" uid="uid://dnmuqnd2x0gqx" path="res://assets/early-gameboy.ttf" id="4_mvhas"]
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
@@ -15,6 +16,7 @@ script = ExtResource("2_27dq3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=948932488]
 limit_enabled = false
+script = ExtResource("3_1126i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1042025763]
 tile_set = ExtResource("1_01stm")

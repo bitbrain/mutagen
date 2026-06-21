@@ -34,6 +34,7 @@ func _ready() -> void:
 		portal_sprite.play("open")
 		portal_sprite.visible = true
 		var abberation_tween = create_tween()
+		VFX.screenshake(200.0, 4.0)
 		abberation_tween.tween_property(VFX, "aberration", 0.025, 1.0)
 		abberation_tween.tween_property(VFX, "aberration", 0.005, 0.5)
 	)

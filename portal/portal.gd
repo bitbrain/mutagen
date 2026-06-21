@@ -48,6 +48,7 @@ func _player_entered(player) -> void:
 
 
 func _initiate_teleport(player:Player, portal:Portal) -> void:
+	VFX.screenshake(100.0, 2.0)
 	player.frozen = true
 	player.dissolve()
 	AudioManager.play_sound(PORTAL_SOUND)

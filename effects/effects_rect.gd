@@ -1,6 +1,10 @@
 extends CanvasLayer
 
 
+signal screenshake_requested(strength:float, duration:float)
+
+
+
 @onready var transition_rect: ColorRect = $TransitionRect
 @onready var crt:ColorRect = $CRT
 @onready var overlay_rect: ColorRect = $OverlayRect
@@ -43,3 +47,7 @@ var overlay_opacity:float = 0.0:
 
 func guide() -> void:
 	guide_ui.visible = true
+
+
+func screenshake(strength:float, duration:float) -> void:
+	screenshake_requested.emit(strength, duration)

@@ -7,7 +7,7 @@ const TRANSITION_DELAY = 0.3
 
 @onready var player: Player = $Player
 @onready var times_label: Label = %TimesLabel
-@onready var camera_2d: Camera2D = $Camera2D
+@onready var camera_2d: ScreenShakeCamera = $Camera2D
 @onready var remote_transform_2d: RemoteTransform2D = $Player/RemoteTransform2D
 
 
@@ -46,12 +46,18 @@ func _ready() -> void:
 	var delayed_smoothing = func():
 		camera_2d.position_smoothing_enabled = true
 	delayed_smoothing.call_deferred()
+	
+	# a bit hacky but that's life.
+	VFX.screenshake_requested.connect(camera_2d.shake)
 
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	times_label.text = PlayerStats.get_total_time_string()
+	
+	#if Input.is_action_just_pressed("test"):
+	#	VFX.screenshake(120, 6.0)
 
 
 func _player_mutated(mutagen_color:MutagenColor):
