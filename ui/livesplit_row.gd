@@ -21,8 +21,8 @@ func _ready() -> void:
 func format_diff() -> String:
 	var diff = str("%.2f" % get_diff())
 	if get_diff() > 0:
-		return "+" + diff
-	return diff
+		return "-" + diff
+	return diff.replace("-", "+")
 
 
 func get_diff() -> float:

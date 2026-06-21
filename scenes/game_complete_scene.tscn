@@ -5,6 +5,7 @@
 
 [node name="GameCompleteScene" type="Node2D" unique_id=1846879572]
 script = ExtResource("1_7dipq")
+debug = true
 current_timing = Array[float]([50.0, 80.0, 150.0, 312.84, 481.34])
 previous_timing = Array[float]([75.0, 125.0, 190.0, 311.39, 399.18])
 
