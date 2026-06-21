@@ -31,6 +31,30 @@ region = Rect2(32, 72, 8, 8)
 atlas = ExtResource("1_pigdy")
 region = Rect2(48, 72, 8, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6xf2"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(0, 128, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flo0y"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(8, 128, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58c4t"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(16, 128, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlyw3"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(24, 128, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjp1i"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(32, 128, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tckc"]
+atlas = ExtResource("1_pigdy")
+region = Rect2(40, 128, 8, 8)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pg8yj"]
 animations = [{
 "frames": [{
@@ -61,9 +85,32 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pg8yj")
 }],
-"loop": false,
-"name": &"default",
+"loop": 0,
+"name": &"v1",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6xf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58c4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlyw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjp1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tckc")
+}],
+"loop": 0,
+"name": &"v2",
+"speed": 5.0
 }]
 
 [node name="TrailEffect" type="Node2D" unique_id=2018338693]
@@ -71,6 +118,5 @@ script = ExtResource("1_aed4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411961360]
 sprite_frames = SubResource("SpriteFrames_pg8yj")
-autoplay = "default"
-frame_progress = 1.0
+animation = &"v2"
 centered = false
