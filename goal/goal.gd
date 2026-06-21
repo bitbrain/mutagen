@@ -3,6 +3,7 @@ extends Node2D
 
 
 const GATE_SOUND = preload("uid://7evupsmbw7t5")
+const WARP_SOUND = preload("uid://drdr2povry305")
 
 
 signal teleport_attempted
@@ -62,6 +63,7 @@ func _player_entered(node:Node2D) -> void:
 		# sorry bro :( you gotta collect some tokens first.
 		teleport_attempted.emit()
 		return
+	AudioManager.play_sound(WARP_SOUND)
 	PlayerStats.finish_stage_time()
 	PlayerStats.next_stage()
 	PlayerStats.start_stage_time()
