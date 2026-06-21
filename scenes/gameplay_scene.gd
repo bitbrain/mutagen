@@ -11,7 +11,6 @@ const TRANSITION_DELAY = 0.3
 @onready var remote_transform_2d: RemoteTransform2D = $Player/RemoteTransform2D
 
 
-
 var tokens_collected = 0
 var total_tokens = 0
 

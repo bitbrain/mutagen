@@ -31,6 +31,7 @@ buses/default_bus_layout="uid://donn6a1n41opx"
 
 [autoload]
 
+PlayerStore="*uid://c71s06d18n8b3"
 PlayerStats="*uid://cbr4gswodnguh"
 AudioManager="*uid://xvwi6xhm12d6"
 VFX="*uid://d0cjj6305dmr2"

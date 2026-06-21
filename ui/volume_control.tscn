@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ek4378gx3myw"]
+
+[ext_resource type="Script" uid="uid://cvl15efyxpkda" path="res://ui/volume_control.gd" id="1_1xkkn"]
+[ext_resource type="Texture2D" uid="uid://c8thmilqwjc0q" path="res://ui/volume_full.tres" id="1_4dqhg"]
+
+[node name="VolumeControl" type="MarginContainer" unique_id=1754911709]
+offset_right = 8.0
+offset_bottom = 87.0
+script = ExtResource("1_1xkkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1531930202]
+layout_mode = 2
+
+[node name="VolumeToggle" type="TextureButton" parent="VBoxContainer" unique_id=371455874]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_4dqhg")
+
+[node name="VolumeSlider" type="VSlider" parent="VBoxContainer" unique_id=1020012372]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(8, -1)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0

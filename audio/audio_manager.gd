@@ -25,7 +25,7 @@ func play_music(audio_stream:AudioStream) -> void:
 	music_stream_player.play()
 	
 	
-func play_sound(audio_stream:AudioStream, random_pitch = 0.2) -> void:
+func play_sound(audio_stream:AudioStream, random_pitch = 0.4) -> void:
 	var sound = AudioStreamPlayer.new()
 	sound.stream = audio_stream
 	sound.process_mode = Node.PROCESS_MODE_ALWAYS

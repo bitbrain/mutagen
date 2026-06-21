@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cpt4h54aosnuj" path="res://effects/effects_rect.gd" id="1_iju4h"]
 [ext_resource type="Shader" uid="uid://cnlpk2v61oqfq" path="res://assets/transition.gdshader" id="2_c5wb0"]
 [ext_resource type="Shader" uid="uid://dga1eh6177ior" path="res://assets/crt.gdshader" id="3_locsd"]
+[ext_resource type="PackedScene" uid="uid://ek4378gx3myw" path="res://ui/volume_control.tscn" id="4_a5t5j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xpbwm"]
 shader = ExtResource("2_c5wb0")
@@ -87,3 +88,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.19607843, 0.19215687, 0.23137255, 0)
+
+[node name="VolumeControl" parent="." unique_id=296231714 instance=ExtResource("4_a5t5j")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 91.0
+grow_horizontal = 0
+
+[node name="SaveTimer" type="Timer" parent="." unique_id=1914796675]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
