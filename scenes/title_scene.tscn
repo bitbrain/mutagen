@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0trgpacxeqvo" path="res://mutagen/mutagen.tscn" id="4_bq8jb"]
 [ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="5_l5n7b"]
 [ext_resource type="Script" uid="uid://ctxfrra7v14q1" path="res://title_camera.gd" id="5_s8xmt"]
+[ext_resource type="PackedScene" uid="uid://cqkljcnbto3q7" path="res://ui/leaderboard_ui.tscn" id="7_s8xmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5n7b"]
 atlas = ExtResource("3_bq8jb")
@@ -127,15 +128,51 @@ script = ExtResource("5_s8xmt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1468758971]
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1832516152]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=130252648]
+layout_mode = 2
+
+[node name="Guide" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=373900325]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Guide"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1343535557]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Leaderboard" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=2099887585]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Leaderboard"
+
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=365465445]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=386303102]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 8
 alignment = 1
 
@@ -154,18 +191,13 @@ centered = false
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1343929679]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Play" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=1181728574]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
-
-[node name="Guide" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=373900325]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Guide"
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=2060406884]
 unique_name_in_owner = true
@@ -174,10 +206,15 @@ text = "Quit"
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer2" unique_id=1516233022]
 layout_mode = 2
-theme_override_constants/margin_top = 16
+mouse_filter = 2
+theme_override_constants/margin_top = 21
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer2/MarginContainer" unique_id=912269915]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 text = "game by bitbrain"
 horizontal_alignment = 1
+
+[node name="LeaderboardUI" parent="CanvasLayer" unique_id=592332549 instance=ExtResource("7_s8xmt")]
+unique_name_in_owner = true
+visible = false

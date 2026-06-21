@@ -7,7 +7,9 @@ const MENU_SOUND = preload("res://assets/menu.ogg")
 
 @onready var play: Button = %Play
 @onready var guide: Button = %Guide
+@onready var leaderboard: Button = %Leaderboard
 @onready var quit: Button = %Quit
+@onready var leaderboard_ui: Panel = %LeaderboardUI
 
 
 func _ready() -> void:
@@ -18,6 +20,7 @@ func _ready() -> void:
 		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
 		.finished.connect(get_tree().change_scene_to_file.bind(INTRO_STAGE_PATH))
 	)
+	leaderboard.pressed.connect(leaderboard_ui.show_leaderboard)
 	guide.pressed.connect(VFX.guide)
 	quit.pressed.connect(func(): get_tree().quit())
 	

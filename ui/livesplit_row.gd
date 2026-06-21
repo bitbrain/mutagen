@@ -13,6 +13,7 @@ class_name LiveSplitRow extends Control
 
 func _ready() -> void:
 	name_label.text = title
+	diff_label.visible = get_diff() != 0
 	diff_label.text = format_diff()
 	diff_label.modulate = Color(get_diff_color())
 	time_label.text = PlayerStats.format_time(current_time)
