@@ -2,11 +2,16 @@
 
 [ext_resource type="TileSet" uid="uid://dvqrmlfy6sv7o" path="res://assets/tileset.tres" id="1_01stm"]
 [ext_resource type="Script" uid="uid://hg0vc67bdcdf" path="res://scenes/gameplay_scene.gd" id="1_xpbwm"]
+[ext_resource type="Script" uid="uid://54hi5gu852oy" path="res://pause_manager.gd" id="2_27dq3"]
 [ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="2_b2a1o"]
 [ext_resource type="FontFile" uid="uid://dnmuqnd2x0gqx" path="res://assets/early-gameboy.ttf" id="4_mvhas"]
 
 [node name="GameplayScene" type="Node2D" unique_id=15941419]
 script = ExtResource("1_xpbwm")
+
+[node name="PauseManager" type="Node" parent="." unique_id=759810208]
+process_mode = 3
+script = ExtResource("2_27dq3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=948932488]
 limit_enabled = false
@@ -36,6 +41,7 @@ theme_override_constants/margin_right = 2
 
 [node name="TimesLabel" type="Label" parent="CanvasLayer/MarginContainer" unique_id=651220219]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
