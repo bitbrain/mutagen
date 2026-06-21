@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://exhg2ju6qjg1"]
+
+[ext_resource type="Script" uid="uid://da6tvgrkopyrb" path="res://ui/livesplit_row.gd" id="1_hbm2g"]
+
+[node name="LivesplitRow" type="HBoxContainer" unique_id=1016454372]
+custom_minimum_size = Vector2(165, 0)
+offset_right = 165.0
+offset_bottom = 10.0
+script = ExtResource("1_hbm2g")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1707604629]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 6
+text = "name"
+
+[node name="DiffLabel" type="Label" parent="." unique_id=939794584]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "diff"
+horizontal_alignment = 2
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1655329569]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "time"
+horizontal_alignment = 2
+justification_flags = 227

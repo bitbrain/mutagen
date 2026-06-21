@@ -1,30 +1,47 @@
+@tool
 extends Node2D
 
 # FIXME: cannot use this! Godot seems to break completely here... :(
 #const STAGE_1 = preload("res://scenes/stages/stage_1.tscn")
 
+
+const ROW_UI = preload("uid://exhg2ju6qjg1")
 const TRANSITION_MS = 0.3
 const TRANSITION_DELAY = 0.3
 
 
+@export_category("Debugging")
+@export var debug = false:
+	set(db):
+		debug = db
+		if Engine.is_editor_hint():
+			_refresh.call_deferred()
+@export var current_timing:Array[float] = []:
+	set(ct):
+		current_timing = ct
+		if Engine.is_editor_hint():
+			_refresh.call_deferred()
+@export var previous_timing:Array[float] = []:
+	set(pt):
+		previous_timing = pt
+		if Engine.is_editor_hint():
+			_refresh.call_deferred()
+
+
 @onready var button: Button = %Button
 
-@onready var timings_container: VBoxContainer = $CanvasLayer/CenterContainer/VBoxContainer/TimingsContainer
-@onready var total_time_label: Label = $CanvasLayer/CenterContainer/VBoxContainer/TotalTimeLabel
+@onready var timings_container: VBoxContainer = %TimingsContainer
+@onready var total_time_label: Label = %TotalTimeLabel
 
 
 func _ready() -> void:
-	total_time_label.text = PlayerStats.get_total_time_string()
-	var timings = PlayerStats.get_stage_time_strings()
-	for timing in timings:
-		var label = Label.new()
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		label.add_theme_font_size_override("font_size", 6)
-		label.text = timing
-		timings_container.add_child(label)
+	if Engine.is_editor_hint():
+		return
+	
 	var fade_in_tween = create_tween()
-	fade_in_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)\
-	.set_delay(TRANSITION_DELAY)
+	fade_in_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)
+	
+	_refresh()
 	
 	button.pressed.connect(func():
 		var transition_tween = create_tween()
@@ -33,3 +50,25 @@ func _ready() -> void:
 		.finished.connect(get_tree().change_scene_to_file.bind("res://scenes/stages/stage_1.tscn"))
 		)
 	
+	
+func _refresh() -> void:
+	var start_time = 0 if debug else PlayerStats.get_start_time()
+	for child in timings_container.get_children():
+		child.queue_free()
+	var timings = current_timing if self.debug else PlayerStats.get_stage_times()
+	var previous_timings = previous_timing if self.debug else []
+	for i in range(0, timings.size()):
+		var timing_seconds = timings[i]
+		var row = ROW_UI.instantiate() as LiveSplitRow
+		row.modulate.a = 0.0
+		row.title = "Stage " + str(i + 1)
+		row.current_time = timing_seconds - start_time
+		row.last_time = row.current_time if previous_timings.is_empty() else previous_timings[i] - start_time
+		timings_container.add_child(row)
+		
+		# animate in the numbers
+		var reveal_tween = create_tween()
+		reveal_tween.tween_property(row, "modulate:a", 1.0, 0.35)\
+		.set_delay(i * 0.15)
+		
+		

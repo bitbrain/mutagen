@@ -27,7 +27,7 @@ func _ready() -> void:
 	hold_timer.timeout.connect(_consume_next_line)
 	
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_anything_pressed():
 		VFX.overlay_opacity = 0.0
 		get_tree().change_scene_to_packed(NEXT_SCENE)

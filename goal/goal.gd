@@ -65,7 +65,6 @@ func _player_entered(node:Node2D) -> void:
 		return
 	AudioManager.play_sound(WARP_SOUND)
 	PlayerStats.finish_stage_time()
-	PlayerStats.next_stage()
 	PlayerStats.start_stage_time()
 	player.frozen = true
 	var transition_tween = create_tween()

@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://tn3w4m7uvli2"]
 
 [ext_resource type="Script" uid="uid://dtho7iqbgiavj" path="res://scenes/game_complete_scene.gd" id="1_7dipq"]
+[ext_resource type="FontFile" uid="uid://tan3g4nnnlnh" path="res://assets/BoldPixels.ttf" id="2_h72ue"]
 
 [node name="GameCompleteScene" type="Node2D" unique_id=1846879572]
 script = ExtResource("1_7dipq")
+current_timing = Array[float]([50.0, 80.0, 150.0, 312.84, 481.34])
+previous_timing = Array[float]([75.0, 125.0, 190.0, 311.39, 399.18])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2136296816]
 
@@ -16,16 +19,20 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=527483708]
 layout_mode = 2
+theme_override_constants/separation = 12
 alignment = 1
 
-[node name="TotalTimeLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=2038677645]
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=224301653]
 layout_mode = 2
-text = "00:00:000"
+theme_override_fonts/font = ExtResource("2_h72ue")
+theme_override_font_sizes/font_size = 21
+text = "Stage performance"
 horizontal_alignment = 1
 
 [node name="TimingsContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=684974367]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = -3
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1779543481]
