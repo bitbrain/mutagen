@@ -57,7 +57,7 @@ func _initiate_teleport(player:Player, portal:Portal) -> void:
 	.finished.connect(_teleport_player.bind(player, portal))
 	
 	var abberation_tween = create_tween()
-	abberation_tween.tween_property(VFX, "aberration", 0.12, 1.0)
+	abberation_tween.tween_property(VFX, "aberration", 0.1, 1.0)
 	abberation_tween.tween_property(VFX, "aberration", 0.005, 0.5)
 	
 

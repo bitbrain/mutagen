@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://dyrnx3ka0u6yl"]
+
+[ext_resource type="Script" uid="uid://bw5degehf3px0" path="res://scenes/intro_scene.gd" id="1_xmg1o"]
+[ext_resource type="Script" uid="uid://bpu4q1p4dgo07" path="res://scenes/intro/intro_line.gd" id="2_0y5sa"]
+[ext_resource type="PackedScene" uid="uid://d2gidcgecqnh5" path="res://player/player.tscn" id="3_gsw8x"]
+[ext_resource type="PackedScene" uid="uid://cgvn6jpbq5a2e" path="res://token/token.tscn" id="4_jkhwn"]
+
+[sub_resource type="Resource" id="Resource_xmg1o"]
+script = ExtResource("2_0y5sa")
+text = "All alone, Marvin did not know where he was but he had to escape this place."
+animation = "walk_in"
+metadata/_custom_type_script = "uid://bpu4q1p4dgo07"
+
+[sub_resource type="Resource" id="Resource_gsw8x"]
+script = ExtResource("2_0y5sa")
+text = "His captors disappeared a long time ago..."
+metadata/_custom_type_script = "uid://bpu4q1p4dgo07"
+
+[sub_resource type="Resource" id="Resource_bq8jb"]
+script = ExtResource("2_0y5sa")
+text = "Strange shards may guide the way out of this place."
+animation = "show_shard"
+metadata/_custom_type_script = "uid://bpu4q1p4dgo07"
+
+[sub_resource type="Resource" id="Resource_0y5sa"]
+script = ExtResource("2_0y5sa")
+text = "Marvin has to traverse this alien environment to find a way home."
+animation = "walk_off"
+hold_time = 0.0
+metadata/_custom_type_script = "uid://bpu4q1p4dgo07"
+
+[sub_resource type="Animation" id="Animation_jkhwn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:animation_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["run"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:flip_override")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Token:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Token:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(59, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8wqor"]
+resource_name = "show_shard"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Token:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Token:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(59, -0.25, 0, 1.9346373, 0.25482178, 61, -0.5083333, 26.505096, 0.21993002, 0, 59, -0.25, 0, 1.9346373, 0.25482178, 61, -0.72023714, 25.208809, 0.1380961, 0.6685829, 59, -0.25, 0, 1.9346373, 0.25482178, 87, -0.70000005, -0.74648285, 0, 0),
+"times": PackedFloat32Array(0, 0.6666667, 1.5132245, 2.179891, 2.9666667, 4.9666667)
+}
+
+[sub_resource type="Animation" id="Animation_gsw8x"]
+resource_name = "walk_in"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-14, 86), Vector2(95, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:animation_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["run", "default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:flip_override")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tij55"]
+resource_name = "walk_off"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(95, 86), Vector2(205, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:flip_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:animation_override")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["run"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkhwn"]
+_data = {
+&"RESET": SubResource("Animation_jkhwn"),
+&"show_shard": SubResource("Animation_8wqor"),
+&"walk_in": SubResource("Animation_gsw8x"),
+&"walk_off": SubResource("Animation_tij55")
+}
+
+[node name="IntroScene" type="Node2D" unique_id=428355807]
+script = ExtResource("1_xmg1o")
+lines = Array[ExtResource("2_0y5sa")]([SubResource("Resource_xmg1o"), SubResource("Resource_gsw8x"), SubResource("Resource_bq8jb"), SubResource("Resource_0y5sa")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=972265035]
+libraries/ = SubResource("AnimationLibrary_jkhwn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=993346315]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=2067624461]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer" unique_id=1352834360]
+layout_mode = 2
+theme_override_constants/margin_bottom = 42
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/MarginContainer" unique_id=1495806473]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Player" parent="." unique_id=1364585358 instance=ExtResource("3_gsw8x")]
+position = Vector2(-14, 86)
+animation_override = "run"
+
+[node name="HoldTimer" type="Timer" parent="." unique_id=1697272040]
+one_shot = true
+
+[node name="Token" parent="." unique_id=1113412797 instance=ExtResource("4_jkhwn")]
+visible = false
+position = Vector2(96, 59)

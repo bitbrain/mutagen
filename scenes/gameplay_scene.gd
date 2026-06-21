@@ -20,8 +20,7 @@ func _ready() -> void:
 	player.mutated.connect(_player_mutated)
 	
 	var transition_tween = create_tween()
-	transition_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)\
-	.set_delay(TRANSITION_DELAY)
+	transition_tween.tween_property(VFX, "transition_amount", 1.5, TRANSITION_DELAY)
 	
 	var goals = get_tree().get_nodes_in_group("goal")
 	var tokens = get_tree().get_nodes_in_group("token")

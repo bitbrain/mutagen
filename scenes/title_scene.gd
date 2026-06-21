@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const Stage1 = preload("res://scenes/stages/stage_tutorial.tscn")
+const INTRO_STAGE_PATH = "res://scenes/intro_scene.tscn"
 const GameplayMusic = preload("res://assets/virus.ogg")
 const MENU_SOUND = preload("res://assets/menu.ogg")
 
@@ -15,7 +15,7 @@ func _ready() -> void:
 		var transition_tween = create_tween()
 		PlayerStats.start_stage_time()
 		transition_tween.tween_property(VFX, "transition_amount", 0.0, 0.3)\
-		.finished.connect(get_tree().change_scene_to_packed.bind(Stage1))
+		.finished.connect(get_tree().change_scene_to_file.bind(INTRO_STAGE_PATH))
 	)
 	quit.pressed.connect(func(): get_tree().quit())
 	

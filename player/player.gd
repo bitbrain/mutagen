@@ -1,3 +1,4 @@
+@tool
 class_name Player extends CharacterBody2D
 
 
@@ -9,10 +10,30 @@ const TrailEffect = preload("res://effects/trail_effect.tscn")
 const MUTATE_SOUND = preload("res://assets/mutate.ogg")
 
 
+
+@export var animation_override = "":
+	set(ao):
+		animation_override = ao
+		play_call = func():
+			if sprite:
+				sprite.play(animation_override)
+		play_call.call_deferred()
+
+@export var flip_override = false:
+	set(fo):
+		flip_override = fo
+		flip_call = func():
+			if sprite:
+				sprite.flip_h = flip_override
+		flip_call.call_deferred()
+
+
 @onready var input_throttle_timer: Timer = $InputThrottleTimer
 @onready var input_delay_timer: Timer = $InputDelayTimer
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 
+var play_call
+var flip_call
 
 var movable = true
 var pressing = false
@@ -25,10 +46,18 @@ var last_distance = Vector2.ZERO
 
 
 func _ready() -> void:
+	if flip_call:
+		flip_call.call_deferred()
+	if play_call:
+		play_call.call_deferred()
+	if Engine.is_editor_hint():
+		return
 	input_throttle_timer.timeout.connect(_on_input_throttle)
 	input_delay_timer.timeout.connect(func(): pressing = true)
 
 func _physics_process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	if mutating:
 		return
 	if frozen:

@@ -3,6 +3,8 @@ extends CanvasLayer
 
 @onready var transition_rect: ColorRect = $TransitionRect
 @onready var crt:ColorRect = $CRT
+@onready var overlay_rect: ColorRect = $OverlayRect
+
 
 var transition_amount = 0.0:
 	set(tr):
@@ -28,3 +30,9 @@ var warp_amount:float = 0.0:
 		warp_amount = wa
 		var shader_material = crt.material as ShaderMaterial
 		shader_material.set_shader_parameter("warp_amount", brightness)
+
+
+var overlay_opacity:float = 0.0:
+	set(oa):
+		overlay_opacity = oa
+		overlay_rect.color.a = overlay_opacity
