@@ -26,7 +26,7 @@ func _ready() -> void:
 	input_throttle_timer.timeout.connect(_on_input_throttle)
 	input_delay_timer.timeout.connect(func(): pressing = true)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if frozen:
 		return
 	if pressing and not Input.is_anything_pressed():
@@ -91,8 +91,8 @@ func _physics_process(delta: float) -> void:
 		animate_offset_tween.tween_property(sprite, "offset", Vector2.ZERO, 0.05)
 		
 		
-func mutate(mutagen_color:MutagenColor) -> void:
-	self.mutagen_color = mutagen_color
+func mutate(other_color:MutagenColor) -> void:
+	self.mutagen_color = other_color
 	modulate = mutagen_color.color
 	mutated.emit(mutagen_color)
 	AudioManager.play_sound(MUTATE_SOUND)

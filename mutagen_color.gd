@@ -5,9 +5,9 @@ var color:Color
 var key:String
 
 
-func _init(color:Color, key:String) -> void:
-	self.color = color
-	self.key = key
+func _init(init_color:Color, init_key:String) -> void:
+	self.color = init_color
+	self.key = init_key
 
 
 const COLOR_MAP = {
@@ -34,11 +34,11 @@ func is_same(other:MutagenColor) -> bool:
 static var DEFAULT = MutagenColor.new(COLOR_MAP["none"], "none")
 
 
-static func resolve(key:String) -> MutagenColor:
-	if key in PLACEHOLDERS:
-		key = PLACEHOLDERS[key]
-	if key in COLOR_MAP:
-		return MutagenColor.new(COLOR_MAP[key], key)	
+static func resolve(this_key:String) -> MutagenColor:
+	if this_key in PLACEHOLDERS:
+		this_key = PLACEHOLDERS[this_key]
+	if this_key in COLOR_MAP:
+		return MutagenColor.new(COLOR_MAP[this_key], this_key)	
 	return MutagenColor.new(Color(COLOR_MAP["none"]), "none")
 
 
@@ -54,5 +54,5 @@ static func resolve_multiple(colorA:String, colorB:String) -> MutagenColor:
 	# ensure to clear cheeky values
 	key_array.erase("none")
 	key_array.sort()
-	var key = ",".join(key_array)
-	return resolve(key)
+	var this_key = ",".join(key_array)
+	return resolve(this_key)

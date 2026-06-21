@@ -18,8 +18,8 @@ func _ready() -> void:
 	_update_color()
 
 
-func change_mutation(mutagen_color:MutagenColor) -> void:
-	var same_mutation = self.mutagen_color.is_same(mutagen_color)
+func change_mutation(other_color:MutagenColor) -> void:
+	var same_mutation = self.mutagen_color.is_same(other_color)
 	visible = not same_mutation
 	set_collision_layer_value(1, visible)
 	

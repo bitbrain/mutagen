@@ -16,7 +16,9 @@ func _ready() -> void:
 	area_2d.body_entered.connect(_player_entered)
 
 
-func _player_entered(player:Player) -> void:
+func _player_entered(node:Node2D) -> void:
+	if not node is Player:
+		return
 	AudioManager.play_sound(COLLECT_SOUND)
 	collected.emit()
 	queue_free()

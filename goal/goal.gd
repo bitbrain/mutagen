@@ -33,12 +33,15 @@ func is_portal_open() -> bool:
 	return portal_sprite.visible
 	
 
-func _player_entered(player:Player) -> void:
+func _player_entered(node:Node2D) -> void:
+	if not node is Player:
+		return
+	var player = node as Player
 	if not is_portal_open():
 		# sorry bro :( you gotta collect some tokens first.
 		teleport_attempted.emit()
 		return
-	PlayerStats.finish_stage_time(PlayerStats.get_current_stage())
+	PlayerStats.finish_stage_time()
 	PlayerStats.next_stage()
 	PlayerStats.start_stage_time()
 	player.frozen = true

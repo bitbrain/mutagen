@@ -50,7 +50,7 @@ func _ready() -> void:
 	delayed_smoothing.call_deferred()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	times_label.text = PlayerStats.get_total_time_string()

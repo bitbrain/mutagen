@@ -18,7 +18,10 @@ func _ready() -> void:
 	collection_area.body_entered.connect(_collect)
 
 
-func _collect(player:Player) -> void:
+func _collect(node:Node2D) -> void:
+	if not node is Player:
+		return
+	var player = node as Player
 	var combined = MutagenColor.resolve_multiple(mutation_color, player.mutagen_color.key)
 	player.mutate(combined)
 
