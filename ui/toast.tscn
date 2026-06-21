@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://rvneivvq2eqd" path="res://ui/toast.gd" id="1_ny61f"]
 
 [node name="Toast" type="CanvasLayer" unique_id=1974196730]
+process_mode = 3
 script = ExtResource("1_ny61f")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1742375409]

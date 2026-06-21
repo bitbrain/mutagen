@@ -87,7 +87,6 @@ func _physics_process(delta: float) -> void:
 		animate_offset_tween.tween_property(sprite, "offset", Vector2.ZERO, 0.05)
 		
 		
-		
 func mutate(mutagen_color:MutagenColor) -> void:
 	self.mutagen_color = mutagen_color
 	modulate = mutagen_color.color

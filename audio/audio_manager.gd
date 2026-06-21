@@ -8,7 +8,9 @@ var music_stream_player:AudioStreamPlayer
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	music_stream_player = AudioStreamPlayer.new()
+	music_stream_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	music_stream_player.bus = &"Music"
 	add_child(music_stream_player)
 
@@ -22,6 +24,7 @@ func play_music(audio_stream:AudioStream) -> void:
 func play_sound(audio_stream:AudioStream, random_pitch = 0.2) -> void:
 	var sound = AudioStreamPlayer.new()
 	sound.stream = audio_stream
+	sound.process_mode = Node.PROCESS_MODE_ALWAYS
 	sound.bus = &"SFX"
 	add_child(sound)
 	sound.pitch_scale = (1.0 - random_pitch / 2.0) + randf_range(0.0, random_pitch)
